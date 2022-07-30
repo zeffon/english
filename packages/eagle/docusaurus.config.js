@@ -56,6 +56,7 @@ const config = {
         },
         blog: false,
         pages: false,
+        sitemap: false,
         theme: {
           id: 'symbol',
           customCss: require.resolve('./src/css/custom.css')
