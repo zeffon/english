@@ -87,7 +87,6 @@ const config = {
             label: '音标',
             activeBaseRegex: `/symbol/`
           },
-          { to: '/blog', label: 'Blog', position: 'left' },
           {
             href: 'https://github.com/zeffon/english',
             position: 'right',

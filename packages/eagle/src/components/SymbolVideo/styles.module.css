@@ -1,0 +1,41 @@
+.symbolContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.symbolContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.symbolItem {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  border: 2px solid var(--ifm-color-secondary-darkest);
+  border-radius: 4px;
+  padding: 4px 12px;
+  line-height: 1.5;
+  transition: opacity 0.2s ease-out;
+  cursor: pointer;
+}
+.symbolItem:hover {
+  box-shadow: 0 0 2px 1px var(--ifm-color-secondary-darkest);
+}
+.symbolItem.isActive {
+  background-color: var(--site-color-checkbox-checked-bg);
+  border: 2px solid var(--ifm-color-primary-darkest);
+  opacity: 0.9;
+}
+
+.symbolBothVideo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}

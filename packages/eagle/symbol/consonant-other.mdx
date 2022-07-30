@@ -1,0 +1,38 @@
+---
+sidebar_position: 6
+sidebar_label: 辅音-塞擦音、近音、边音和辅音连缀
+title: ''
+slug: /other
+---
+
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
+import { otherConsonant, bbcOtherConsonant } from '@site/data/symbol'
+import SymbolVideo, { YINGTUYU_MODE, BBC_MODE, BOTH_MODE } from '@site/src/components/SymbolVideo'
+
+<Tabs className="unique-tabs flex-row-center">
+  <TabItem value="yingyutu" label="英语兔">
+    <SymbolVideo data={otherConsonant} mode={YINGTUYU_MODE}></SymbolVideo>
+  </TabItem>
+  <TabItem value="bbc" label="BBC发音">
+    <SymbolVideo data={bbcOtherConsonant} mode={BBC_MODE}></SymbolVideo>
+  </TabItem>
+  <TabItem value="both" label="对比">
+    <SymbolVideo data={otherConsonant} mode={BOTH_MODE}></SymbolVideo>
+  </TabItem>
+</Tabs>
+
+:::info
+
+<div>塞擦音：/ tʃ /、 / dʒ /</div>
+<div>近音：/ w /、 / r /、 / j /</div>
+<div>边音：/ l /</div>
+<div>辅音连缀：/ ts /、 / dz /、 / tr /、 / dr /</div>
+
+:::
+
+:::caution
+
+音标共有**48**个，分为元音和辅音。但在在**`BBC 经典发音教程`**是没有**辅音连缀**这四个音标视频，所以就只有**44**个。
+
+:::

@@ -1,0 +1,23 @@
+---
+sidebar_position: 1
+sidebar_label: 单元音
+title: ''
+slug: /single
+---
+
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
+import { singleVowels, bbcSingleVowels } from '@site/data/symbol'
+import SymbolVideo, { YINGTUYU_MODE, BBC_MODE, BOTH_MODE } from '@site/src/components/SymbolVideo'
+
+<Tabs className="unique-tabs flex-row-center">
+  <TabItem value="yingyutu" label="英语兔">
+    <SymbolVideo data={singleVowels} mode={YINGTUYU_MODE}></SymbolVideo>
+  </TabItem>
+  <TabItem value="bbc" label="BBC发音">
+    <SymbolVideo data={bbcSingleVowels} mode={BBC_MODE}></SymbolVideo>
+  </TabItem>
+  <TabItem value="both" label="对比">
+    <SymbolVideo data={singleVowels} mode={BOTH_MODE}></SymbolVideo>
+  </TabItem>
+</Tabs>
