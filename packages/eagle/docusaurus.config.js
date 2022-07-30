@@ -32,18 +32,32 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/zeffon/english'
+          sidebarPath: require.resolve('./sidebars.js')
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl: 'https://github.com/zeffon/english'
         },
         theme: {
+          customCss: require.resolve('./src/css/custom.css')
+        }
+      })
+    ],
+    [
+      'classic',
+      /** @type {import('@docusaurus/preset-classic').Options} */
+      ({
+        debug: false,
+        docs: {
+          id: 'symbol',
+          path: 'symbol',
+          routeBasePath: 'symbol',
+          sidebarPath: require.resolve('./sidebarsSymbol.js')
+        },
+        blog: false,
+        pages: false,
+        theme: {
+          id: 'symbol',
           customCss: require.resolve('./src/css/custom.css')
         }
       })
@@ -60,11 +74,17 @@ const config = {
           src: 'img/logo.svg'
         },
         items: [
+          // {
+          //   type: 'docSidebar',
+          //   sidebarId: 'docs',
+          //   position: 'left',
+          //   label: 'Docs'
+          // },
           {
-            type: 'doc',
-            docId: 'intro',
+            to: '/symbol',
             position: 'left',
-            label: 'Tutorial'
+            label: '音标',
+            activeBaseRegex: `/symbol/`
           },
           { to: '/blog', label: 'Blog', position: 'left' },
           {
