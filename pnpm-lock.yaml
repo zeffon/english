@@ -53,6 +53,7 @@ importers:
       clsx: ^1.2.1
       prism-react-renderer: ^1.3.5
       react: ^17.0.2
+      react-bilibili-embed-renderer: ^1.1.0
       react-dom: ^17.0.2
       typescript: ^4.7.4
     dependencies:
@@ -62,6 +63,7 @@ importers:
       clsx: 1.2.1
       prism-react-renderer: 1.3.5_react@17.0.2
       react: 17.0.2
+      react-bilibili-embed-renderer: 1.1.0_sfoxds7t5ydpegc3knd667wn6m
       react-dom: 17.0.2_react@17.0.2
     devDependencies:
       '@docusaurus/module-type-aliases': 2.0.0-rc.1_sfoxds7t5ydpegc3knd667wn6m
@@ -7597,6 +7599,16 @@ packages:
       lodash.curry: 4.1.1
       lodash.flow: 3.5.0
       pure-color: 1.3.0
+    dev: false
+
+  /react-bilibili-embed-renderer/1.1.0_sfoxds7t5ydpegc3knd667wn6m:
+    resolution: {integrity: sha512-Vu4IOa7Qm6Gq7teWctvKXlgznxz19/sxrwaoBDWz1D+lRf35lNXdekCDGtvLJ1fa+sHU3gPsxyC1Kh67ky0eVw==}
+    peerDependencies:
+      react: '>=16.0.8'
+      react-dom: '>=16.0.8'
+    dependencies:
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
     dev: false
 
   /react-dev-utils/12.0.1_xnp4kzegbjokq62cajex2ovgkm:
