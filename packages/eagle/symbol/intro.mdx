@@ -1,8 +1,29 @@
 ---
 sidebar_position: 0
-sidebar_label: 音标
+sidebar_label: 音标介绍
 title: ''
 slug: /
 ---
 
-音标
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
+import BilibiliEmbedRenderer from 'react-bilibili-embed-renderer'
+import { symbolTabItems } from '@site/data/symbol'
+
+export default function TabContainer() {
+  return (
+    <Tabs className="unique-tabs flex-row-center">
+      {symbolTabItems.map((item, idx) => {
+        return (
+          <TabItem value={item.value} label={`${idx + 1}. ${item.label}`} key={idx}>
+            <div className="flex-row-center">
+              <BilibiliEmbedRenderer aid={item.aid} page={item.page} />
+            </div>
+          </TabItem>
+        )
+      })}
+    </Tabs>
+  )
+}
+
+<TabContainer></TabContainer>
