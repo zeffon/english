@@ -18,7 +18,7 @@ jobs:
         run: |
           # matching v2.0.0 / v2.0.0-beta.8 etc
           if [[ $GITHUB_REF_NAME =~ ^v.+ ]]; then
-            pkgName="project_name"
+            pkgName="eagle"
           else
             # `%@*` truncates @ and version number from the right side.
             # https://stackoverflow.com/questions/9532654/expression-after-last-specific-character
@@ -35,4 +35,4 @@ jobs:
         with:
           tag_name: ${{ github.ref }}
           body: |
-            Please refer to [CHANGELOG.md](https://github.com/zeffon/your_repo_name/blob/${{ github.ref_name }}/packages/${{ steps.tag.outputs.pkgName }}/CHANGELOG.md) for details.
+            Please refer to [CHANGELOG.md](https://github.com/zeffon/english/blob/${{ github.ref_name }}/packages/${{ steps.tag.outputs.pkgName }}/CHANGELOG.md) for details.
