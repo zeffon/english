@@ -17,7 +17,7 @@ if (isDryRun) {
   console.log()
 }
 
-export const packages = ['project_name']
+export const packages = ['eagle']
 
 export const versionIncrements: ReleaseType[] = ['patch', 'minor', 'major']
 
@@ -164,7 +164,7 @@ export async function publishPackage(pkdDir: string, tag?: string): Promise<void
 
 export async function getLatestTag(pkgName: string): Promise<string> {
   const tags = (await run('git', ['tag'], { stdio: 'pipe' })).stdout.split(/\n/).filter(Boolean)
-  const prefix = pkgName === 'project_name' ? 'v' : `${pkgName}@`
+  const prefix = pkgName === 'eagle' ? 'v' : `${pkgName}@`
   return tags
     .filter((tag) => tag.startsWith(prefix))
     .sort()
