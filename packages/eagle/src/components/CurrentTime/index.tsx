@@ -6,6 +6,7 @@ const CurrentTime = () => {
   const weeks = ['日', '一', '二', '三', '四', '五', '六']
 
   const timer = useRef()
+  const [rendered, setRendered] = useState(false)
   const [year, setYear] = useState('')
   const [month, setMonth] = useState('')
   const [week, setWeek] = useState('')
@@ -23,6 +24,7 @@ const CurrentTime = () => {
     const hour = time.hour()
     const minute = time.minute()
     const second = time.second()
+    setRendered(true)
     setYear(year)
     setMonth(month + 1)
     setWeek(weeks[week])
@@ -40,20 +42,24 @@ const CurrentTime = () => {
   }, [])
 
   return (
-    <div className={styles.currentTime}>
-      <div className={styles.timeArea}>
-        {hour}
-        <span className={styles.timeAreaSplit}>:</span>
-        {minute}
-        <span className={styles.timeSecond}>{second}</span>
-      </div>
-      <div className={styles.dateArea}>
-        <div className={styles.dateAreaWeek}>星期{week}</div>
-        <div>
-          {year}年{month}月{date}日
+    <>
+      {rendered && (
+        <div className={styles.currentTime}>
+          <div className={styles.timeArea}>
+            {hour}
+            <span className={styles.timeAreaSplit}>:</span>
+            {minute}
+            <span className={styles.timeSecond}>{second}</span>
+          </div>
+          <div className={styles.dateArea}>
+            <div className={styles.dateAreaWeek}>星期{week}</div>
+            <div>
+              {year}年{month}月{date}日
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      )}
+    </>
   )
 }
 
