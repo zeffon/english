@@ -88,6 +88,12 @@ const config = {
             activeBaseRegex: `/symbol/`
           },
           {
+            type: 'docSidebar',
+            sidebarId: 'marking',
+            position: 'left',
+            label: '语音标记'
+          },
+          {
             href: 'https://github.com/zeffon/english',
             position: 'right',
             className: 'header-github-link',
