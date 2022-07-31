@@ -5,17 +5,25 @@ title: ''
 slug: /marking
 ---
 
+import CurrentTime from '@site/src/components/CurrentTime'
+
 export const DailySentence = () => {
   return (
     <div className="flex-row-center">
       <iframe
         src="https://dict.eudic.net/home/dailysentence"
-        width="430"
+        width="450"
         height="400"
         scrolling="no"
       ></iframe>
     </div>
   )
 }
+
+<div className="flex-row-center">
+  <div style={{ marginBottom: '12px', width: '450px' }}>
+    <CurrentTime></CurrentTime>
+  </div>
+</div>
 
 <DailySentence></DailySentence>

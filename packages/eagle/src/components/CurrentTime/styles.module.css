@@ -1,0 +1,37 @@
+.currentTime {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  max-height: 100px;
+  height: 100px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  color: #fff;
+  background-image: linear-gradient(var(--ifm-color-primary), var(--ifm-color-primary-lightest));
+}
+
+.timeArea {
+  font-size: 55px;
+  letter-spacing: 1px;
+}
+
+.timeAreaSplit {
+  position: relative;
+  top: -6px;
+  margin: 0 1px;
+  border-radius: 0;
+}
+
+.timeSecond {
+  font-size: 30px;
+  margin-left: 12px;
+}
+
+.dateArea {
+  font-size: 16px;
+}
+
+.dateAreaWeek {
+  font-size: 20px;
+}
