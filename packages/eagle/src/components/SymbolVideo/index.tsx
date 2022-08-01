@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import BilibiliEmbedRenderer from 'react-bilibili-embed-renderer'
+import type { SymbolItem } from '@site/data/symbol'
 import styles from './styles.module.css'
-import { SymbolItem } from '@site/data/symbol'
 
 export const YINGTUYU_MODE = 'yingyutu'
 export const BBC_MODE = 'bbc'

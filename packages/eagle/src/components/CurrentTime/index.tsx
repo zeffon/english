@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react'
-import styles from './styles.module.css'
 import dayjs from 'dayjs'
+import styles from './styles.module.css'
 
-const CurrentTime = () => {
+const CurrentTime = (): JSX.Element => {
   const weeks = ['日', '一', '二', '三', '四', '五', '六']
 
   const timer = useRef()

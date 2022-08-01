@@ -106,6 +106,9 @@ jobs:
       - name: Build
         run: pnpm run build
 
+      - name: Lint
+        run: pnpm run lint
+
       - name: Check formatting
         run: pnpm prettier --check .
 
