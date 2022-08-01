@@ -6,6 +6,7 @@ pnpm-workspace.yaml
 node_modules
 dist/
 build/
+.docusaurus/
 
 packages/*/CHANGELOG.md
 LICENSE.md
