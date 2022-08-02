@@ -17,6 +17,7 @@
     "@docusaurus/core": "2.0.0-rc.1",
     "@docusaurus/preset-classic": "2.0.0-rc.1",
     "@mdx-js/react": "^1.6.22",
+    "ahooks": "^3.6.2",
     "clsx": "^1.2.1",
     "dayjs": "^1.11.4",
     "prism-react-renderer": "^1.3.5",
