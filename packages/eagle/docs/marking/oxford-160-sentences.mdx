@@ -1,0 +1,76 @@
+---
+sidebar_position: 2
+sidebar_label: 牛津160句
+title: ''
+slug: /marking/oxford
+---
+
+import { useState, useEffect } from 'react'
+import { useHistory } from '@docusaurus/router'
+import { oxford160Sentences } from '@site/data/sentences'
+import { useLocalStorageState, useDebounce } from 'ahooks'
+import dayjs from 'dayjs'
+import styles from './styles.module.css'
+
+export const SearchBar = ({ value, setValue }) => {
+  return (
+    <div className={styles.searchContainer}>
+      <input
+        type="number"
+        placeholder="请输入1-160查询牛津160句"
+        value={value}
+        onInput={(e) => {
+          const value = e.currentTarget.value
+          const numberValue = parseInt(value)
+          if ((numberValue >= 1 && numberValue <= 160) || value === '') {
+            setValue(numberValue || value)
+          }
+        }}
+      />
+    </div>
+  )
+}
+
+export const ShowSentence = ({ value }) => {
+  return (
+    <div className={styles.SentenceContainer}>
+      <div className={styles.SentenceIndex}>{value.id}</div>
+      <div className={styles.SentenceContent}>
+        <div>{value.value}</div>
+        <div>{value.chinese}</div>
+      </div>
+    </div>
+  )
+}
+
+export const SentenceContainer = () => {
+  const [value, setValue] = useState('')
+  const debouncedValue = useDebounce(value, { wait: 500 })
+  const [historyIdx, setHistoryIdx] = useLocalStorageState('oxford_sentence', {
+    defaultValue: { index: 0, date: '' }
+  })
+  const [sentenceIdx, setSentenceIdx] = useState(historyIdx.index)
+  useEffect(() => {
+    const date = dayjs().format('YYYY-MM-DD')
+    if (historyIdx && date !== historyIdx.date) {
+      const index = historyIdx.index > 160 ? 1 : historyIdx.index + 1
+      setSentenceIdx(index)
+      setHistoryIdx({ index, date })
+    }
+  }, [])
+  useEffect(() => {
+    if (value) {
+      const date = dayjs().format('YYYY-MM-DD')
+      setSentenceIdx(value)
+      setHistoryIdx({ index: value, date })
+    }
+  }, [debouncedValue])
+  return (
+    <div>
+      <SearchBar value={value} setValue={setValue}></SearchBar>
+      <ShowSentence value={oxford160Sentences[sentenceIdx - 1]}></ShowSentence>
+    </div>
+  )
+}
+
+<SentenceContainer></SentenceContainer>

@@ -33,7 +33,8 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: require.resolve('./sidebars.js')
+          sidebarPath: require.resolve('./sidebars.js'),
+          editUrl: 'https://github.com/zeffon/english'
         },
         blog: {
           showReadingTime: true,
@@ -53,7 +54,8 @@ const config = {
           id: 'symbol',
           path: 'symbol',
           routeBasePath: 'symbol',
-          sidebarPath: require.resolve('./sidebarsSymbol.js')
+          sidebarPath: require.resolve('./sidebarsSymbol.js'),
+          editUrl: 'https://github.com/zeffon/english'
         },
         blog: false,
         pages: false,
@@ -76,12 +78,6 @@ const config = {
           src: 'img/logo.svg'
         },
         items: [
-          // {
-          //   type: 'docSidebar',
-          //   sidebarId: 'docs',
-          //   position: 'left',
-          //   label: 'Docs'
-          // },
           {
             to: '/symbol',
             position: 'left',
@@ -93,6 +89,30 @@ const config = {
             sidebarId: 'marking',
             position: 'left',
             label: '语音标记'
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'docs',
+            position: 'left',
+            label: '语料'
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'docs',
+            position: 'left',
+            label: '句型积累'
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'docs',
+            position: 'left',
+            label: '造句练习'
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'docs',
+            position: 'left',
+            label: '纠音训练'
           },
           {
             href: 'https://github.com/zeffon/english',

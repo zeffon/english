@@ -1,0 +1,15 @@
+---
+sidebar_position: 1
+sidebar_label: 标记训练
+title: ''
+slug: /marking/train
+---
+
+import { fetchMarkings } from '@site/src/utils/spider'
+
+export const MarkingTrain = () => {
+  fetchMarkings()
+  return <div>MarkingTrain</div>
+}
+
+<MarkingTrain></MarkingTrain>
