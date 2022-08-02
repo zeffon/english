@@ -91,30 +91,6 @@ const config = {
             label: '语音标记'
           },
           {
-            type: 'docSidebar',
-            sidebarId: 'docs',
-            position: 'left',
-            label: '语料'
-          },
-          {
-            type: 'docSidebar',
-            sidebarId: 'docs',
-            position: 'left',
-            label: '句型积累'
-          },
-          {
-            type: 'docSidebar',
-            sidebarId: 'docs',
-            position: 'left',
-            label: '造句练习'
-          },
-          {
-            type: 'docSidebar',
-            sidebarId: 'docs',
-            position: 'left',
-            label: '纠音训练'
-          },
-          {
             href: 'https://github.com/zeffon/english',
             position: 'right',
             className: 'header-github-link',
