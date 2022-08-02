@@ -4,7 +4,7 @@ interface SentencesProp {
   chinese: string
 }
 
-export const oxford160Sentences: SentencesProp[] = [
+export const oxfordSentences: SentencesProp[] = [
   {
     id: 1,
     value: 'The students argued for more time to prepare for the exam.',

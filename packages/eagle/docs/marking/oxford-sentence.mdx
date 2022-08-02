@@ -7,7 +7,7 @@ slug: /marking/oxford
 
 import { useState, useEffect } from 'react'
 import { useHistory } from '@docusaurus/router'
-import { oxford160Sentences } from '@site/data/sentences'
+import { oxfordSentences } from '@site/data/sentences'
 import { useLocalStorageState, useDebounce } from 'ahooks'
 import dayjs from 'dayjs'
 import styles from './styles.module.css'
@@ -43,7 +43,7 @@ export const ShowSentence = ({ value }) => {
   )
 }
 
-export const SentenceContainer = () => {
+export const OxfordSentence = () => {
   const [value, setValue] = useState('')
   const debouncedValue = useDebounce(value, { wait: 500 })
   const [historyIdx, setHistoryIdx] = useLocalStorageState('oxford_sentence', {
@@ -65,12 +65,13 @@ export const SentenceContainer = () => {
       setHistoryIdx({ index: value, date })
     }
   }, [debouncedValue])
+  const oxfordSentence = oxfordSentences[sentenceIdx - 1]
   return (
     <div>
       <SearchBar value={value} setValue={setValue}></SearchBar>
-      <ShowSentence value={oxford160Sentences[sentenceIdx - 1]}></ShowSentence>
+      {oxfordSentence && <ShowSentence value={oxfordSentences[sentenceIdx - 1]}></ShowSentence>}
     </div>
   )
 }
 
-<SentenceContainer></SentenceContainer>
+<OxfordSentence></OxfordSentence>
