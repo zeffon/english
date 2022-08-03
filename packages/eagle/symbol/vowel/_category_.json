@@ -1,0 +1,11 @@
+{
+  "position": 2,
+  "label": "元音",
+  "collapsible": true,
+  "collapsed": false,
+  "link": {
+    "type": "generated-index",
+    "slug": "/vowel",
+    "title": "元音总览"
+  }
+}

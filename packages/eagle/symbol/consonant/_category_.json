@@ -1,0 +1,11 @@
+{
+  "position": 3,
+  "label": "辅音",
+  "collapsible": true,
+  "collapsed": false,
+  "link": {
+    "type": "generated-index",
+    "slug": "/consonant",
+    "title": "辅音总览"
+  }
+}

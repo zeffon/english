@@ -1,21 +1,21 @@
 ---
-sidebar_position: 0
-sidebar_label: 音标介绍
+sidebar_position: 1
+sidebar_label: 音标示范
 title: ''
-slug: /
+slug: /demo
 ---
 
 import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
 import BilibiliEmbedRenderer from 'react-bilibili-embed-renderer'
-import { symbolIntroItems } from '@site/data/symbol'
+import { symbolDemoItems } from '@site/data/symbol'
 
-export const IntroContainer = () => {
+export const DemoContainer = () => {
   return (
     <Tabs className="unique-tabs flex-row-center">
-      {symbolIntroItems.map((item, idx) => {
+      {symbolDemoItems.map((item, idx) => {
         return (
-          <TabItem value={item.value} label={`${idx + 1}. ${item.label}`} key={idx}>
+          <TabItem value={item.value} label={item.label} key={idx}>
             <div className="flex-row-center">
               <BilibiliEmbedRenderer aid={item.aid} page={item.page} />
             </div>
@@ -26,7 +26,7 @@ export const IntroContainer = () => {
   )
 }
 
-<IntroContainer></IntroContainer>
+<DemoContainer></DemoContainer>
 
 :::tip
 
@@ -36,13 +36,5 @@ export const IntroContainer = () => {
 
 来自 B 站的[**`一起暴击口语`**](https://space.bilibili.com/433248184)的[**小破站最好的版本！BBC
 经典发音教程！英语国际音标，英式发音课程！**](https://www.bilibili.com/video/av54685652?zw)
-
-:::
-
-:::caution
-
-音标共有**48**个，分为元音和辅音。但在在**`BBC 经典发音教程`**是没有**辅音连缀**这四个音标视频，所以就只有**44**个。
-
-至于为什么现代有些 DJ 音标教程去掉辅音连缀这四个音标，可以查看[**`英语兔`**](https://space.bilibili.com/483162496)在辅音 `/ ts / & / dz /` 这节课程中最后的解答。[**`传送`**](./consonant/other)
 
 :::

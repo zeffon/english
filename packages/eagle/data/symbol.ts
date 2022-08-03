@@ -649,3 +649,8 @@ export const symbolIntroItems = [
   { value: 'vowelChart', label: '元音图', aid: '414096645', page: 6 },
   { value: 'consonants', label: '辅音', aid: '414096645', page: 27 }
 ]
+
+export const symbolDemoItems = [
+  { value: 'dj', label: 'DJ音标示范', aid: '414096645', page: 45 },
+  { value: 'kk', label: 'KK音标示范', aid: '414096645', page: 46 }
+]
