@@ -10,6 +10,8 @@ import { useHistory } from '@docusaurus/router'
 import { oxfordSentences } from '@site/data/sentences'
 import { useLocalStorageState, useDebounce } from 'ahooks'
 import dayjs from 'dayjs'
+import PrevIcon from '@site/static/img/previous.svg'
+import NextIcon from '@site/static/img/next.svg'
 import styles from './styles.module.css'
 
 export const SearchBar = ({ value, setValue }) => {
@@ -33,12 +35,21 @@ export const SearchBar = ({ value, setValue }) => {
 
 export const ShowSentence = ({ value }) => {
   return (
-    <div className={styles.SentenceContainer}>
-      <div className={styles.SentenceIndex}>{value.id}</div>
-      <div className={styles.SentenceContent}>
+    <div className={styles.sentenceContainer}>
+      <div className={styles.sentenceIndex}>{value.id}</div>
+      <div className={styles.sentenceContent}>
         <div>{value.value}</div>
         <div>{value.chinese}</div>
       </div>
+    </div>
+  )
+}
+
+export const SentenceBtn = ({ prevHandle, nextHandle }) => {
+  return (
+    <div className={styles.sentenceBtnContainer}>
+      <PrevIcon className={styles.prevBtn} onClick={prevHandle} />
+      <NextIcon className={styles.nextBtn} onClick={nextHandle} />
     </div>
   )
 }
@@ -66,10 +77,23 @@ export const OxfordSentence = () => {
     }
   }, [debouncedValue])
   const oxfordSentence = oxfordSentences[sentenceIdx - 1]
+  const prevHandle = () => {
+    const newIdx = sentenceIdx === 1 ? 160 : sentenceIdx - 1
+    const date = dayjs().format('YYYY-MM-DD')
+    setSentenceIdx(newIdx)
+    setHistoryIdx({ index: newIdx, date })
+  }
+  const nextHandle = () => {
+    const newIdx = sentenceIdx === 160 ? 1 : sentenceIdx + 1
+    const date = dayjs().format('YYYY-MM-DD')
+    setSentenceIdx(newIdx)
+    setHistoryIdx({ index: newIdx, date })
+  }
   return (
     <div>
       <SearchBar value={value} setValue={setValue}></SearchBar>
       {oxfordSentence && <ShowSentence value={oxfordSentences[sentenceIdx - 1]}></ShowSentence>}
+      <SentenceBtn prevHandle={prevHandle} nextHandle={nextHandle}></SentenceBtn>
     </div>
   )
 }
