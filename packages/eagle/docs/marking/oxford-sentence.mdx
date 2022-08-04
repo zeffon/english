@@ -8,6 +8,7 @@ slug: /marking/oxford
 import { useState, useEffect } from 'react'
 import { useHistory } from '@docusaurus/router'
 import { oxfordSentences } from '@site/data/sentences'
+import useAudio from '@site/src/components/Mp3Player'
 import { useLocalStorageState, useDebounce } from 'ahooks'
 import dayjs from 'dayjs'
 import PrevIcon from '@site/static/img/previous.svg'
@@ -45,10 +46,11 @@ export const ShowSentence = ({ value }) => {
   )
 }
 
-export const SentenceBtn = ({ prevHandle, nextHandle }) => {
+export const SentenceBtn = ({ prevHandle, nextHandle, audio }) => {
   return (
     <div className={styles.sentenceBtnContainer}>
       <PrevIcon className={styles.prevBtn} onClick={prevHandle} />
+      {audio}
       <NextIcon className={styles.nextBtn} onClick={nextHandle} />
     </div>
   )
@@ -82,18 +84,23 @@ export const OxfordSentence = () => {
     const date = dayjs().format('YYYY-MM-DD')
     setSentenceIdx(newIdx)
     setHistoryIdx({ index: newIdx, date })
+    controls.pause()
   }
   const nextHandle = () => {
     const newIdx = sentenceIdx === 160 ? 1 : sentenceIdx + 1
     const date = dayjs().format('YYYY-MM-DD')
     setSentenceIdx(newIdx)
     setHistoryIdx({ index: newIdx, date })
+    controls.pause()
   }
+  // TODO set mp3Url
+  const [mp3Url, setMp3Url] = useState('')
+  const [audio, controls] = useAudio({ src: mp3Url })
   return (
     <div>
       <SearchBar value={value} setValue={setValue}></SearchBar>
       {oxfordSentence && <ShowSentence value={oxfordSentences[sentenceIdx - 1]}></ShowSentence>}
-      <SentenceBtn prevHandle={prevHandle} nextHandle={nextHandle}></SentenceBtn>
+      <SentenceBtn prevHandle={prevHandle} nextHandle={nextHandle} audio={audio}></SentenceBtn>
     </div>
   )
 }
