@@ -651,6 +651,7 @@ export const symbolIntroItems = [
 ]
 
 export const symbolDemoItems = [
-  { value: 'dj', label: 'DJ音标示范', aid: '414096645', page: 45 },
-  { value: 'kk', label: 'KK音标示范', aid: '414096645', page: 46 }
+  { value: 'dj', label: 'DJ音标示范', aid: '414096645', page: 44 },
+  { value: 'kk', label: 'KK音标示范', aid: '414096645', page: 45 },
+  { value: 'ipa', label: '国际音标示范', aid: '414096645', page: 46 }
 ]
