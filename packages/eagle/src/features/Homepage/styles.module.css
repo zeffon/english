@@ -5,7 +5,9 @@
   width: 100%;
 }
 
-.featureSvg {
-  height: 200px;
-  width: 200px;
+.moduleDescription {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  line-height: 1.5;
 }

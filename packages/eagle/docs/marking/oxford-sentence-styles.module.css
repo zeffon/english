@@ -1,14 +1,14 @@
 .searchContainer {
   margin-left: auto;
-  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
 }
 .searchContainer input {
-  width: 220px;
-  height: 32px;
-  border-radius: 15px;
-  padding: 12px;
-  border: 1px solid gray;
-  font-size: 16px;
+  width: 13.75rem;
+  height: 2rem;
+  border-radius: 2rem;
+  padding: 0.75rem;
+  border: 0.0625rem solid gray;
+  font-size: 1rem;
 }
 .searchContainer input:focus-visible {
   outline: none;
@@ -26,45 +26,45 @@
 
 .sentenceContainer {
   width: 100%;
-  min-height: 80px;
+  min-height: 5rem;
   box-sizing: border-box;
   display: flex;
   align-items: center;
-  border: 2px solid var(--ifm-color-primary);
+  border: 0.125rem solid var(--ifm-color-primary);
   box-shadow: var(--ifm-global-shadow-md);
   border-radius: var(--ifm-card-border-radius);
 }
 .sentenceIndex {
   flex-shrink: 0;
-  min-width: 80px;
-  min-height: 80px;
-  line-height: 80px;
+  min-width: 5rem;
+  min-height: 5rem;
+  line-height: 5rem;
   text-align: center;
-  font-size: 36px;
+  font-size: 2.25rem;
   border-radius: var(--ifm-card-border-radius);
-  letter-spacing: 1px;
+  letter-spacing: 0.0625rem;
   background-color: var(--ifm-color-primary-light);
   color: #fff;
-  margin: -2px;
+  margin: -0.125rem;
 }
 .sentenceContent {
   width: 100%;
-  padding: 8px 12px;
-  font-size: 18px;
+  padding: 0.5rem 0.75rem;
+  font-size: 1.125rem;
 }
 
 .sentenceBtnContainer {
-  width: 200px;
-  height: 56px;
+  width: 12.5rem;
+  height: 3.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: #fff;
   background-color: var(--ifm-color-primary-light);
   margin: 0 auto;
-  padding: 0 24px;
-  margin-top: 32px;
-  border-radius: 50px;
+  padding: 0 1.5rem;
+  margin-top: 2rem;
+  border-radius: 3.125rem;
 }
 .prevBtn,
 .nextBtn {
