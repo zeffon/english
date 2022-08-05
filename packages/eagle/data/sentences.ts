@@ -1,10 +1,10 @@
-interface SentencesProp {
+interface SentencesProps {
   id: number
   value: string
   chinese: string
 }
 
-export const oxfordSentences: SentencesProp[] = [
+export const oxfordSentences: SentencesProps[] = [
   {
     id: 1,
     value: 'The students argued for more time to prepare for the exam.',

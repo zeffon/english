@@ -1,12 +1,9 @@
-export interface SymbolItem {
+export interface SymbolProps {
   id: number
-  // index of bbc symbol video
   bbc_idx?: number
   name: string
   yingyutu: {
-    // avId of bilibili video collect
     aid: string
-    // index of bilibili video collect
     page: number
   }
   bbc?: {
@@ -15,7 +12,7 @@ export interface SymbolItem {
   }
 }
 
-export const symbols: SymbolItem[] = [
+export const symbols: SymbolProps[] = [
   {
     id: 1,
     bbc_idx: 2,

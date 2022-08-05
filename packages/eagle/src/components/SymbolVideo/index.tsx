@@ -1,18 +1,18 @@
 import React, { useState } from 'react'
 import BilibiliEmbedRenderer from 'react-bilibili-embed-renderer'
-import type { SymbolItem } from '@site/data/symbol'
+import type { SymbolProps } from '@site/data/symbol'
 import styles from './styles.module.css'
 
 export const YINGTUYU_MODE = 'yingyutu'
 export const BBC_MODE = 'bbc'
 export const BOTH_MODE = 'both'
 
-type SymbolVideoProp = {
-  data: SymbolItem[]
+type SymbolVideoProps = {
+  data: SymbolProps[]
   mode: typeof YINGTUYU_MODE | typeof BBC_MODE | typeof BOTH_MODE
 }
 
-const SymbolVideo = ({ data, mode }: SymbolVideoProp): JSX.Element => {
+const SymbolVideo = ({ data, mode }: SymbolVideoProps): JSX.Element => {
   const [curSymbol, setSymbol] = useState(data[0])
   return (
     <div className={styles.symbolContainer}>
