@@ -61,6 +61,7 @@ const useAudio = (props: IAudioProps) => {
     pause: () => {
       const el = ref.current
       if (el && !lockPlay) {
+        setPaused(true)
         return el.pause()
       }
     }
