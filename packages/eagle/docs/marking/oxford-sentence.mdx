@@ -93,9 +93,7 @@ export const OxfordSentence = () => {
     setHistoryIdx({ index: newIdx, date })
     controls.pause()
   }
-  // TODO set mp3Url
-  const [mp3Url, setMp3Url] = useState('')
-  const [audio, controls] = useAudio({ src: mp3Url })
+  const [audio, controls] = useAudio({ src: oxfordSentences[sentenceIdx - 1].mp3Url })
   return (
     <div>
       <SearchBar value={value} setValue={setValue}></SearchBar>
