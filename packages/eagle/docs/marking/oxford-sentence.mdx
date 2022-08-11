@@ -62,43 +62,46 @@ export const OxfordSentence = () => {
   const [historyIdx, setHistoryIdx] = useLocalStorageState('oxford_sentence', {
     defaultValue: { index: 0, date: '' }
   })
-  const [sentenceIdx, setSentenceIdx] = useState(historyIdx.index)
+  const [sentenceIdx, setSentenceIdx] = useState(() => {
+    return historyIdx.index || 0
+  })
   useEffect(() => {
     const date = dayjs().format('YYYY-MM-DD')
     if (historyIdx && date !== historyIdx.date) {
-      const index = historyIdx.index > 160 ? 1 : historyIdx.index + 1
+      const index = historyIdx.index >= 159 ? 0 : historyIdx.index === 0 ? 0 : historyIdx.index + 1
       setSentenceIdx(index)
       setHistoryIdx({ index, date })
     }
   }, [])
   useEffect(() => {
     if (value) {
+      const index = value - 1
       const date = dayjs().format('YYYY-MM-DD')
-      setSentenceIdx(value)
-      setHistoryIdx({ index: value, date })
+      setSentenceIdx(index)
+      setHistoryIdx({ index, date })
     }
   }, [debouncedValue])
-  const oxfordSentence = oxfordSentences[sentenceIdx - 1]
+  const oxfordSentence = oxfordSentences[sentenceIdx]
   const prevHandle = () => {
-    const newIdx = sentenceIdx === 1 ? 160 : sentenceIdx - 1
+    const newIdx = sentenceIdx === 0 ? 159 : sentenceIdx - 1
     const date = dayjs().format('YYYY-MM-DD')
     setSentenceIdx(newIdx)
     setHistoryIdx({ index: newIdx, date })
     controls.pause()
   }
   const nextHandle = () => {
-    const newIdx = sentenceIdx === 160 ? 1 : sentenceIdx + 1
+    const newIdx = sentenceIdx === 159 ? 0 : sentenceIdx + 1
     const date = dayjs().format('YYYY-MM-DD')
     setSentenceIdx(newIdx)
     setHistoryIdx({ index: newIdx, date })
     controls.pause()
   }
-  const mp3Url = sentenceIdx ? oxfordSentences[sentenceIdx - 1].mp3Url : oxfordSentences[0].mp3Url
+  const mp3Url = oxfordSentences[sentenceIdx].mp3Url
   const [audio, controls] = useAudio({ src: mp3Url })
   return (
     <div>
       <SearchBar value={value} setValue={setValue}></SearchBar>
-      {oxfordSentence && <ShowSentence value={oxfordSentences[sentenceIdx - 1]}></ShowSentence>}
+      {oxfordSentence && <ShowSentence value={oxfordSentences[sentenceIdx]}></ShowSentence>}
       <SentenceBtn prevHandle={prevHandle} nextHandle={nextHandle} audio={audio}></SentenceBtn>
     </div>
   )
