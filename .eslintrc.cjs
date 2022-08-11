@@ -90,7 +90,7 @@ module.exports = defineConfig({
   },
   overrides: [
     {
-      files: ['packages/eagle/*/**'],
+      files: ['packages/eagle/*/**', 'packages/spider/*/**'],
       rules: {
         'no-undef': 'off',
         'node/no-extraneous-require': 'off',
@@ -101,16 +101,16 @@ module.exports = defineConfig({
       }
     },
     {
-      files: ['packages/eagle/babel.config.js', 'packages/eagle/docusaurus.config.js'],
+      files: ['packages/**/*'],
+      excludedFiles: '**/__tests__/**',
       rules: {
         'no-restricted-globals': ['error', 'require', '__dirname', '__filename']
       }
     },
     {
-      files: ['packages/**/*'],
-      excludedFiles: '**/__tests__/**',
+      files: ['packages/eagle/babel.config.js', 'packages/eagle/docusaurus.config.js'],
       rules: {
-        'no-restricted-globals': ['error', 'require', '__dirname', '__filename']
+        'no-restricted-globals': ['off', 'require', '__dirname', '__filename']
       }
     },
     {
