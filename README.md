@@ -1,7 +1,7 @@
 <h1 align="center"><a src="https://english.zeffon.cn">english</a></h1>
 
 <div align="center">
-本英语学习方法来自知乎的帖子 - <a src="https://www.zhihu.com/question/20097263">怎么练好英语口语？</a>的高分回答。
+本英语学习方法来自知乎的帖子 - <a href="https://www.zhihu.com/question/20097263" target="_blank">怎么练好英语口语？</a>的高分回答。
 </div>
 
 ## 方法论
