@@ -5,6 +5,27 @@
   width: 100%;
 }
 
+.prologue {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.moduleContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.moduleIndex {
+  width: 6.25rem;
+  height: 6.25rem;
+  line-height: 6.25rem;
+  border-radius: 50%;
+  font-size: 4rem;
+  color: #fff;
+  background-color: var(--ifm-color-primary);
+  margin: 2rem auto 1rem;
+}
+
 .moduleDescription {
   display: flex;
   flex-direction: column;
