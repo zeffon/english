@@ -70,7 +70,7 @@ importers:
       dayjs: ^1.11.4
       prism-react-renderer: ^1.3.5
       react: ^17.0.2
-      react-bilibili-embed-renderer: ^1.1.0
+      react-bilibili-embed-renderer: ^1.2.1
       react-dom: ^17.0.2
       typescript: ^4.7.4
     dependencies:
@@ -83,7 +83,7 @@ importers:
       dayjs: 1.11.4
       prism-react-renderer: 1.3.5_react@17.0.2
       react: 17.0.2
-      react-bilibili-embed-renderer: 1.1.0_sfoxds7t5ydpegc3knd667wn6m
+      react-bilibili-embed-renderer: 1.2.1_sfoxds7t5ydpegc3knd667wn6m
       react-dom: 17.0.2_react@17.0.2
     devDependencies:
       '@docusaurus/module-type-aliases': 2.0.1_sfoxds7t5ydpegc3knd667wn6m
@@ -8952,8 +8952,8 @@ packages:
       pure-color: 1.3.0
     dev: false
 
-  /react-bilibili-embed-renderer/1.1.0_sfoxds7t5ydpegc3knd667wn6m:
-    resolution: {integrity: sha512-Vu4IOa7Qm6Gq7teWctvKXlgznxz19/sxrwaoBDWz1D+lRf35lNXdekCDGtvLJ1fa+sHU3gPsxyC1Kh67ky0eVw==}
+  /react-bilibili-embed-renderer/1.2.1_sfoxds7t5ydpegc3knd667wn6m:
+    resolution: {integrity: sha512-oK34/cEMApHRwD3c4vcmHRxPhb/msL1mKIfq4OOKK5ix0rb+GOvHkoC6kCvhj87AvhwhQrUQDsRm1rHKc3SOdw==}
     peerDependencies:
       react: '>=16.0.8'
       react-dom: '>=16.0.8'
