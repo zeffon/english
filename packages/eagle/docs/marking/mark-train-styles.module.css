@@ -1,25 +1,8 @@
-@media screen and (max-width: 768px) {
-  .AudioContainer {
-    height: 25rem;
-  }
-}
-
-@media screen and (max-width: 496px) {
-  .AudioContainer {
-    height: 20rem;
-  }
-}
-
-@media screen and (max-width: 420px) {
-  .AudioContainer {
-    height: 15rem;
-  }
-}
-
 .BiliVideoCardList {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  margin-top: 1.25rem;
 }
 
 .BiliVideoCard {
@@ -27,7 +10,8 @@
   flex-direction: column;
   cursor: pointer;
   width: 12.5rem;
-  margin: 1rem;
+  margin-right: 1.25rem;
+  margin-bottom: 1.25rem;
 }
 
 .BiliVideoCardSelected {
@@ -132,4 +116,35 @@
 
 .BiliVideoPaginationHidden {
   visibility: hidden;
+}
+
+@media screen and (max-width: 768px) {
+  .AudioContainer {
+    height: 25rem;
+  }
+}
+
+@media screen and (max-width: 495px) {
+  .AudioContainer {
+    height: 20rem;
+  }
+  .BiliVideoCard {
+    width: 11.25rem;
+  }
+  .BiliVideoCard:nth-of-type(2n) {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .AudioContainer {
+    height: 15rem;
+  }
+  .BiliVideoCard {
+    flex-direction: row;
+    width: 100%;
+  }
+  .BiliVideoCardImgWarp {
+    margin-right: 1rem;
+  }
 }
