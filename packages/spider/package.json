@@ -13,11 +13,11 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
-    "cheerio": "1.0.0-rc.12",
     "koa": "^2.13.4",
     "koa-body": "^4.2.0",
     "koa-router": "^10.1.1",
-    "koa2-cors": "^2.0.6"
+    "koa2-cors": "^2.0.6",
+    "puppeteer": "^16.2.0"
   },
   "devDependencies": {
     "@types/koa": "^2.13.4",
