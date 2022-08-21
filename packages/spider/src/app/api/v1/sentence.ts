@@ -1,7 +1,6 @@
 import type { Context } from 'koa'
-import axios from 'axios'
-import * as cheerio from 'cheerio'
 import { description, prefix, request, summary, tags } from 'koa-swagger-decorator'
+import puppeteer from 'puppeteer'
 
 const tag = tags(['sentence'])
 
@@ -12,10 +11,21 @@ export default class SentenceController {
   @description('example: /sentence/height')
   @tag
   async getSentenceHeight(ctx: Context) {
-    const { data } = await axios.get('https://dict.eudic.net/home/dailysentence')
-    const $ = cheerio.load(data)
-    const container = $('div .containter').html()
-    // TODO calc container height when window device width is 450px
-    ctx.body = 'ok'
+    const browser = await puppeteer.launch({
+      headless: false,
+      defaultViewport: {
+        width: 500,
+        height: 2000
+      }
+    })
+    const page = await browser.newPage()
+    await page.goto('https://dict.eudic.net/home/dailysentence')
+    let height = 0
+    height = await page.evaluate(() => {
+      height = document.getElementsByClassName('containter')[0].clientHeight
+      return height
+    })
+    await browser.close()
+    ctx.body = { height }
   }
 }
