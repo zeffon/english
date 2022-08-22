@@ -95,7 +95,6 @@ importers:
       '@types/koa': ^2.13.4
       '@types/koa-router': ^7.4.4
       '@types/koa2-cors': ^2.0.2
-      '@types/lodash': ^4.14.178
       '@types/node': ^16.11.12
       axios: ^0.27.2
       koa: ^2.13.4
@@ -120,7 +119,6 @@ importers:
       '@types/koa': 2.13.5
       '@types/koa-router': 7.4.4
       '@types/koa2-cors': 2.0.2
-      '@types/lodash': 4.14.182
       '@types/node': 16.11.47
       koa-swagger-decorator: 1.8.6
       nodemon: 2.0.19
@@ -3204,10 +3202,6 @@ packages:
     resolution: {integrity: sha512-WXgKWpBsbS14kzmzD9LeFapOIa678h7zvUHxDwXwSx4ETKXhXLVUAToX6jZ/U7EihM7qwyD9W/BZvB0MRu7MTQ==}
     dependencies:
       '@types/koa': 2.13.5
-    dev: true
-
-  /@types/lodash/4.14.182:
-    resolution: {integrity: sha512-/THyiqyQAP9AfARo4pF+aCGcyiQ94tX/Is2I7HofNRqoYLgN1PBoOWu2/zTA5zMxzP5EFutMtWtGAFRKUe961Q==}
     dev: true
 
   /@types/mdast/3.0.10:
