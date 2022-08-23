@@ -12,7 +12,7 @@ export default class SentenceController {
   @tag
   async getSentenceHeight(ctx: Context) {
     const browser = await puppeteer.launch({
-      headless: false,
+      headless: true,
       defaultViewport: {
         width: 500,
         height: 2000
