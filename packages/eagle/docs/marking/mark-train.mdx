@@ -75,13 +75,13 @@ export const BiliVideoCardContainer = ({ list, curIndex, setIndex, page, setPage
         }`}
       >
         <div
-          className={page.pn === 1 && styles.BiliVideoPaginationHidden}
+          className={`${page.pn === 1 && styles.BiliVideoPaginationHidden}`}
           onClick={() => changePage(page.pn - 1)}
         >
           上一页
         </div>
         <div
-          className={page.count <= page.pn * page.ps && styles.BiliVideoPaginationHidden}
+          className={`${page.count <= page.pn * page.ps && styles.BiliVideoPaginationHidden}`}
           onClick={() => changePage(page.pn + 1)}
         >
           下一页
