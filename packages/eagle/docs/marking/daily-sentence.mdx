@@ -13,7 +13,7 @@ export const DailySentence = () => {
   useEffect(async () => {
     const response = await fetch(`https://english.zeffon.cn/spider/v1/sentence/height`)
     const json = await response.json()
-    setHeight(json.height)
+    setHeight(json.height || 1200)
   }, [])
   return (
     <div className="flex-row-center">
