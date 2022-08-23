@@ -5,22 +5,30 @@ title: ''
 slug: /marking/sentence
 ---
 
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
+import { useLocalStorageState } from 'ahooks'
+import dayjs from 'dayjs'
 import CurrentTime from '@site/src/components/CurrentTime'
 
 export const DailySentence = () => {
-  const [height, setHeight] = useState(1200)
+  const [heightStore, setHeightStore] = useLocalStorageState('sentence_height', {
+    defaultValue: { height: 1200, date: '' }
+  })
   useEffect(async () => {
-    const response = await fetch(`https://english.zeffon.cn/spider/v1/sentence/height`)
-    const json = await response.json()
-    setHeight(json.height || 1200)
+    const date = dayjs().format('YYYY-MM-DD')
+    if (heightStore && date !== heightStore.date) {
+      const response = await fetch(`https://english.zeffon.cn/spider/v1/sentence/height`)
+      const json = await response.json()
+      const height = json.height || 1200
+      setHeightStore({ height, date })
+    }
   }, [])
   return (
     <div className="flex-row-center">
       <iframe
         src="https://dict.eudic.net/home/dailysentence"
         width="450"
-        height={height}
+        height={heightStore.height}
         scrolling="no"
       ></iframe>
     </div>
@@ -34,3 +42,9 @@ export const DailySentence = () => {
 </div>
 
 <DailySentence></DailySentence>
+
+:::tip
+
+以上每日一句来自欧路词典的[**`英语每日一句`**](https://dict.eudic.net/home/dailysentence)
+
+:::
