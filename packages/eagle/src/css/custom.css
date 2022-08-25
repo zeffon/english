@@ -54,6 +54,12 @@
   justify-content: center;
 }
 
+.flex-col-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .unique-tabs .tabs__item {
   line-height: 1rem;
   margin-right: 0.5rem;
@@ -64,4 +70,18 @@
   color: #fff;
   border-radius: var(--ifm-global-radius);
   background-color: var(--ifm-tabs-color-active);
+}
+
+input:focus-visible {
+  outline: none;
+  border-color: var(--ifm-color-primary);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
 }
