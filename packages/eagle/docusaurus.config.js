@@ -143,6 +143,12 @@ const config = {
           },
           {
             type: 'docSidebar',
+            sidebarId: 'pronunciation',
+            position: 'left',
+            label: '发音教程'
+          },
+          {
+            type: 'docSidebar',
             sidebarId: 'marking',
             position: 'left',
             label: '语音标记'
