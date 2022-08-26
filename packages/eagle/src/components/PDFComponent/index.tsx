@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { Document, Page, pdfjs } from 'react-pdf'
+import { useSize } from 'ahooks'
 import styles from './styles.module.css'
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`
 
@@ -7,6 +8,9 @@ const usePDF = (file: File) => {
   const [numPages, setNumPages] = useState(0)
   const [pageNumber, setPageNumber] = useState(1)
   const [value, setValue] = useState(1)
+
+  const ref = useRef(null)
+  const size = useSize(ref)
 
   const onDocumentLoadSuccess = ({ numPages }) => {
     setNumPages(numPages)
@@ -44,9 +48,9 @@ const usePDF = (file: File) => {
 
   const pdfRef = (
     <>
-      <div className={styles.pdfContainer}>
+      <div ref={ref} className={styles.pdfContainer}>
         <Document file={file} onLoadSuccess={onDocumentLoadSuccess}>
-          <Page pageNumber={pageNumber} className={styles.ReactPdfPage} />
+          <Page pageNumber={pageNumber} width={size && size.width} />
         </Document>
       </div>
 
