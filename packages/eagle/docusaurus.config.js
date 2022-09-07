@@ -143,15 +143,15 @@ const config = {
           },
           {
             type: 'docSidebar',
-            sidebarId: 'pronunciation',
-            position: 'left',
-            label: '发音教程'
-          },
-          {
-            type: 'docSidebar',
             sidebarId: 'marking',
             position: 'left',
             label: '语音标记'
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'lib',
+            position: 'left',
+            label: '资料'
           },
           {
             href: 'https://github.com/zeffon/english',
