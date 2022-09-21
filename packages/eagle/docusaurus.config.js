@@ -154,6 +154,12 @@ const config = {
             label: '资料'
           },
           {
+            type: 'docSidebar',
+            sidebarId: 'games',
+            position: 'left',
+            label: '游戏'
+          },
+          {
             href: 'https://github.com/zeffon/english',
             position: 'right',
             className: 'header-github-link',

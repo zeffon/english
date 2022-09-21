@@ -1,0 +1,55 @@
+.row {
+  display: flex;
+  width: 100%;
+  margin: 0 auto 0.5rem;
+  touch-action: manipulation;
+}
+
+.spacer {
+  flex: 0.5;
+}
+
+.keyboard {
+  font-family: inherit;
+  font-weight: bold;
+  border: 0;
+  padding: 0;
+  margin: 0 0.375rem 0 0;
+  height: 3.625rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  user-select: none;
+  background-color: #d3d6da;
+  color: #1a1a1b;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
+  transition: all 0.2s 1.5s;
+}
+.keyboard:last-of-type {
+  margin: 0;
+}
+.keyboard.big {
+  flex: 1.5;
+}
+
+.correct,
+.present,
+.absent {
+  color: #fff !important;
+}
+
+.correct {
+  background-color: #6aaa64 !important;
+}
+
+.present {
+  background-color: #c9b458 !important;
+}
+
+.absent {
+  background-color: #787c7e !important;
+}
