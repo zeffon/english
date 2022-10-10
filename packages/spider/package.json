@@ -7,7 +7,7 @@
     "node": ">=12.2.0"
   },
   "scripts": {
-    "dev": "nodemon",
+    "start": "nodemon",
     "prod": "set NODE_ENV=production&&nodemon",
     "build": "tsc && tsc-alias"
   },
