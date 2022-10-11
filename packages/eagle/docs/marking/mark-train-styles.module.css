@@ -126,6 +126,13 @@
   visibility: hidden;
 }
 
+.BilibiliErrorMsg {
+  height: 4rem;
+  line-height: 4rem;
+  text-align: center;
+  color: #ef5a5a;
+}
+
 @media screen and (max-width: 495px) {
   .BiliVideoCard {
     width: 11.25rem;

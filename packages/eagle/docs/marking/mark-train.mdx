@@ -98,25 +98,36 @@ export const MarkingTrain = () => {
   const [list, setList] = useState([])
   const [curIndex, setIndex] = useState(0)
   const [page, setPage] = useState({ count: 0, pn: 1, ps: 30 })
+  const [errorMsg, setErrorMsg] = useState('')
   useEffect(async () => {
     const response = await fetch(
       `https://english.zeffon.cn/spider/v1/bilibili/audio?page=${page.pn}&count=30&mid=131058159`
     )
     const json = await response.json()
-    setList(json.list)
-    setPage(json.page)
+    const code = json.code
+    if (code === 0) {
+      setList(json.list)
+      setPage(json.page)
+    } else {
+      setErrorMsg(json.message)
+    }
   }, [page.pn])
   return (
     <>
-      <meta name="referrer" content="no-referrer" />
-      <BiliAudioView item={list[curIndex]}></BiliAudioView>
-      <BiliVideoCardContainer
-        list={list}
-        curIndex={curIndex}
-        setIndex={setIndex}
-        page={page}
-        setPage={setPage}
-      ></BiliVideoCardContainer>
+      {errorMsg ? (
+        <div className={styles.BilibiliErrorMsg}>请求Bilibili接口异常：{errorMsg}</div>
+      ) : (
+        <div>
+          <BiliAudioView item={list[curIndex]}></BiliAudioView>
+          <BiliVideoCardContainer
+            list={list}
+            curIndex={curIndex}
+            setIndex={setIndex}
+            page={page}
+            setPage={setPage}
+          ></BiliVideoCardContainer>
+        </div>
+      )}
     </>
   )
 }
