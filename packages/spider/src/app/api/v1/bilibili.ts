@@ -33,12 +33,13 @@ export default class SentenceController {
       headers
     })
     const code = data.code
+    const message = data.message
     let list = []
     let paging = { count: 0, pn: 1, ps: 30 }
     if (code === 0) {
       list = data.data.list.vlist
       paging = data.data.page
     }
-    ctx.body = { code, list, paging, data }
+    ctx.body = { code, message, list, paging }
   }
 }
