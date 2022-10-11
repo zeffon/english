@@ -1,5 +1,6 @@
 import type { Context } from 'koa'
 import axios from 'axios'
+axios.defaults.withCredentials = true
 import { description, prefix, query, request, summary, tags } from 'koa-swagger-decorator'
 
 const audioSchema = {
@@ -21,11 +22,23 @@ export default class SentenceController {
     const page = ctx.query.page
     const count = ctx.query.count
     const mid = ctx.query.mid
-    const { data } = await axios.get(
-      `https://api.bilibili.com/x/space/arc/search?mid=${mid}&ps=${count}&tid=0&pn=${page}&keyword=&order=pubdate&jsonp=jsonp`
-    )
-    const list = data.data.list.vlist
-    const paging = data.data.page
-    ctx.body = { list: list, page: paging }
+    const url = `https://api.bilibili.com/x/space/arc/search?mid=${mid}&ps=${count}&tid=0&pn=${page}&keyword=&order=pubdate&order_avoided=true&jsonp=jsonp`
+    const headers = {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    }
+    const { data } = await axios({
+      withCredentials: true,
+      method: 'get',
+      url,
+      headers
+    })
+    const code = data.code
+    let list = []
+    let paging = { count: 0, pn: 1, ps: 30 }
+    if (code === 0) {
+      list = data.data.list.vlist
+      paging = data.data.page
+    }
+    ctx.body = { code, list, paging, data }
   }
 }
