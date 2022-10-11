@@ -114,9 +114,13 @@ export const MarkingTrain = () => {
   }, [page.pn])
   return (
     <>
-      <meta name="referrer" content="no-referrer" />
       {errorMsg ? (
-        <div className={styles.BilibiliErrorMsg}>请求Bilibili接口异常：{errorMsg}</div>
+        <div className={styles.BilibiliError}>
+          <div className={styles.BilibiliErrorMsg}>请求Bilibili接口异常：{errorMsg}</div>
+          <div>
+            请自行前往，<a href="https://space.bilibili.com/131058159">传送门</a>
+          </div>
+        </div>
       ) : (
         <div>
           <BiliAudioView item={list[curIndex]}></BiliAudioView>
