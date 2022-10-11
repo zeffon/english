@@ -114,6 +114,7 @@ export const MarkingTrain = () => {
   }, [page.pn])
   return (
     <>
+      <meta name="referrer" content="no-referrer" />
       {errorMsg ? (
         <div className={styles.BilibiliErrorMsg}>请求Bilibili接口异常：{errorMsg}</div>
       ) : (
