@@ -30,13 +30,13 @@ export const BiliAudioView = ({ item }) => {
   )
 }
 
-export const BiliVideoCardContainer = ({ list, curIndex, setIndex, page, setPage }) => {
+export const BiliVideoCardContainer = ({ list, curIndex, setIndex, paging, setPaging }) => {
   const selectItem = (index) => {
     setIndex(index)
     scrollToTop()
   }
   const changePage = (pn) => {
-    setPage({ pn })
+    setPaging({ pn })
     scrollToTop()
   }
   return (
@@ -78,14 +78,14 @@ export const BiliVideoCardContainer = ({ list, curIndex, setIndex, page, setPage
         }`}
       >
         <div
-          className={`${page.pn === 1 && styles.BiliVideoPaginationHidden}`}
-          onClick={() => changePage(page.pn - 1)}
+          className={`${paging.pn === 1 && styles.BiliVideoPaginationHidden}`}
+          onClick={() => changePage(paging.pn - 1)}
         >
           上一页
         </div>
         <div
-          className={`${page.count <= page.pn * page.ps && styles.BiliVideoPaginationHidden}`}
-          onClick={() => changePage(page.pn + 1)}
+          className={`${paging.count <= paging.pn * paging.ps && styles.BiliVideoPaginationHidden}`}
+          onClick={() => changePage(paging.pn + 1)}
         >
           下一页
         </div>
@@ -97,23 +97,24 @@ export const BiliVideoCardContainer = ({ list, curIndex, setIndex, page, setPage
 export const MarkingTrain = () => {
   const [list, setList] = useState([])
   const [curIndex, setIndex] = useState(0)
-  const [page, setPage] = useState({ count: 0, pn: 1, ps: 30 })
+  const [paging, setPaging] = useState({ count: 0, pn: 1, ps: 30 })
   const [errorMsg, setErrorMsg] = useState('')
   useEffect(async () => {
     const response = await fetch(
-      `https://english.zeffon.cn/spider/v1/bilibili/audio?page=${page.pn}&count=30&mid=131058159`
+      `https://english.zeffon.cn/spider/v1/bilibili/audio?page=${paging.pn}&count=30&mid=131058159`
     )
     const json = await response.json()
     const code = json.code
     if (code === 0) {
       setList(json.list)
-      setPage(json.page)
+      setPaging(json.paging)
     } else {
       setErrorMsg(json.message)
     }
-  }, [page.pn])
+  }, [paging.pn])
   return (
     <>
+      <meta name="referrer" content="no-referrer" />
       {errorMsg ? (
         <div className={styles.BilibiliError}>
           <div className={styles.BilibiliErrorMsg}>请求Bilibili接口异常：{errorMsg}</div>
@@ -128,8 +129,8 @@ export const MarkingTrain = () => {
             list={list}
             curIndex={curIndex}
             setIndex={setIndex}
-            page={page}
-            setPage={setPage}
+            paging={paging}
+            setPaging={setPaging}
           ></BiliVideoCardContainer>
         </div>
       )}
