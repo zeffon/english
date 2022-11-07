@@ -1,6 +1,5 @@
 import type { Context } from 'koa'
 import axios from 'axios'
-axios.defaults.withCredentials = true
 import { description, prefix, query, request, summary, tags } from 'koa-swagger-decorator'
 
 const audioSchema = {
@@ -23,14 +22,11 @@ export default class SentenceController {
     const count = ctx.query.count
     const mid = ctx.query.mid
     const url = `https://api.bilibili.com/x/space/arc/search?mid=${mid}&ps=${count}&tid=0&pn=${page}&keyword=&order=pubdate&order_avoided=true&jsonp=jsonp`
-    const headers = {
-      'Content-Type': 'application/x-www-form-urlencoded'
-    }
-    const { data } = await axios({
-      withCredentials: true,
-      method: 'get',
-      url,
-      headers
+    const { data } = await axios.get(url, {
+      headers: {
+        'User-Agent':
+          'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:32.0) Gecko/20100101 Firefox/32.0'
+      }
     })
     const code = data.code
     const message = data.message
