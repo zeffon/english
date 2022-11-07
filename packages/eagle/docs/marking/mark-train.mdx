@@ -74,7 +74,7 @@ export const BiliVideoCardContainer = ({ list, curIndex, setIndex, paging, setPa
       </div>
       <div
         className={`${styles.BiliVideoPagination} ${
-          page.count <= page.ps && styles.BiliVideoPaginationDisabled
+          paging.count <= paging.ps && styles.BiliVideoPaginationDisabled
         }`}
       >
         <div
