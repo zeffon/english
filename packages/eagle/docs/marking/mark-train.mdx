@@ -52,7 +52,7 @@ export const BiliVideoCardContainer = ({ list, curIndex, setIndex, paging, setPa
               }`}
             >
               <div className={styles.BiliVideoCardImgWarp}>
-                <img className={styles.BiliVideoCardImg} src={item.pic} />
+                <img className={styles.BiliVideoCardImg} src={item.pic} title={item.title} />
                 <div className={styles.BiliVideoCardStats}></div>
                 <BiliVideoCardStatsIcon
                   className={styles.BiliVideoCardStatsIcon}
@@ -63,9 +63,9 @@ export const BiliVideoCardContainer = ({ list, curIndex, setIndex, paging, setPa
                 <span className={styles.BiliVideoCardStatsDuration}>{item.length}</span>
               </div>
               <div className={styles.BiliVideoCardInfo}>
-                <div>{item.title}</div>
+                <div title={item.title}>{item.title}</div>
                 <div className={styles.BiliVideoCardInfoAuthor}>
-                  {item.author} &nbsp;{calcBiliVideoDate(item.created)}
+                  {item.author}&nbsp;&nbsp;{calcBiliVideoDate(item.created)}
                 </div>
               </div>
             </div>
