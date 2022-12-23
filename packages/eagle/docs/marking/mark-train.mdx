@@ -5,94 +5,9 @@ title: ''
 slug: /marking/train
 ---
 
-import { useRef, useState, useEffect } from 'react'
-import { useSize } from 'ahooks'
-import BilibiliEmbedRenderer from 'react-bilibili-embed-renderer'
-import { calcBiliPlayCount, calcBiliVideoDate, scrollToTop } from '@site/src/utils/helper'
+import { useState, useEffect } from 'react'
 import styles from './mark-train-styles.module.css'
-import BiliVideoCardStatsIcon from '@site/static/img/bili-video-card-stats-icon.svg'
-
-export const BiliAudioView = ({ item }) => {
-  const ref = useRef(null)
-  const size = useSize(ref)
-  return (
-    <>
-      {item && (
-        <div ref={ref} className={styles.BiliAudioView} id="bili-audio">
-          <BilibiliEmbedRenderer
-            aid={item.aid}
-            width={size && size.width}
-            iframeClass={styles.AudioContainer}
-          ></BilibiliEmbedRenderer>
-        </div>
-      )}
-    </>
-  )
-}
-
-export const BiliVideoCardContainer = ({ list, curIndex, setIndex, paging, setPaging }) => {
-  const selectItem = (index) => {
-    setIndex(index)
-    scrollToTop()
-  }
-  const changePage = (pn) => {
-    setPaging({ pn })
-    scrollToTop()
-  }
-  return (
-    <>
-      <div className={styles.BiliVideoCardList}>
-        {list.map((item, index) => {
-          return (
-            <div
-              onClick={() => selectItem(index)}
-              key={item.aid}
-              className={`${styles.BiliVideoCard} ${
-                index === curIndex && styles.BiliVideoCardSelected
-              }`}
-            >
-              <div className={styles.BiliVideoCardImgWarp}>
-                <img className={styles.BiliVideoCardImg} src={item.pic} title={item.title} />
-                <div className={styles.BiliVideoCardStats}></div>
-                <BiliVideoCardStatsIcon
-                  className={styles.BiliVideoCardStatsIcon}
-                ></BiliVideoCardStatsIcon>
-                <span className={styles.BiliVideoCardStatsCount}>
-                  {calcBiliPlayCount(item.play)}
-                </span>
-                <span className={styles.BiliVideoCardStatsDuration}>{item.length}</span>
-              </div>
-              <div className={styles.BiliVideoCardInfo}>
-                <div title={item.title}>{item.title}</div>
-                <div className={styles.BiliVideoCardInfoAuthor}>
-                  {item.author}&nbsp;&nbsp;{calcBiliVideoDate(item.created)}
-                </div>
-              </div>
-            </div>
-          )
-        })}
-      </div>
-      <div
-        className={`${styles.BiliVideoPagination} ${
-          paging.count <= paging.ps && styles.BiliVideoPaginationDisabled
-        }`}
-      >
-        <div
-          className={`${paging.pn === 1 && styles.BiliVideoPaginationHidden}`}
-          onClick={() => changePage(paging.pn - 1)}
-        >
-          上一页
-        </div>
-        <div
-          className={`${paging.count <= paging.pn * paging.ps && styles.BiliVideoPaginationHidden}`}
-          onClick={() => changePage(paging.pn + 1)}
-        >
-          下一页
-        </div>
-      </div>
-    </>
-  )
-}
+import { VideoCardPage, VideoPlayer } from '@site/src/components/BiliVideo'
 
 export const MarkingTrain = () => {
   const [list, setList] = useState([])
@@ -124,14 +39,14 @@ export const MarkingTrain = () => {
         </div>
       ) : (
         <div>
-          <BiliAudioView item={list[curIndex]}></BiliAudioView>
-          <BiliVideoCardContainer
+          <VideoPlayer item={list[curIndex]} />
+          <VideoCardPage
             list={list}
             curIndex={curIndex}
             setIndex={setIndex}
             paging={paging}
             setPaging={setPaging}
-          ></BiliVideoCardContainer>
+          />
         </div>
       )}
     </>
