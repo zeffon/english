@@ -23,8 +23,9 @@
   margin-bottom: 1.25rem;
 }
 
-.BiliVideoCardSelected {
+.BiliVideoCardSelected .BiliVideoCardInfo {
   color: var(--ifm-color-primary);
+  font-weight: bold;
 }
 
 .BiliVideoCardImgWarp {

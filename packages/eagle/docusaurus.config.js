@@ -136,10 +136,16 @@ const config = {
         },
         items: [
           {
-            to: '/symbol',
+            to: '/symbol/',
             position: 'left',
             label: '音标',
             activeBaseRegex: `/symbol/`
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'basic',
+            position: 'left',
+            label: '基础'
           },
           {
             type: 'docSidebar',

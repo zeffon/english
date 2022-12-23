@@ -1,6 +1,11 @@
 import React from 'react'
 import BiliVideoCardStatsIcon from '@site/static/img/bili-video-card-stats-icon.svg'
-import { calcBiliPlayCount, calcBiliVideoDate, scrollToTop } from '@site/src/utils/helper'
+import {
+  calcBiliPlayCount,
+  calcBiliPlayDuration,
+  calcBiliVideoDate,
+  scrollToTop
+} from '@site/src/utils/helper'
 import type { VideoItemProps } from '@site/src/types/Video'
 import styles from './styles.module.css'
 
@@ -14,7 +19,7 @@ interface VideoCardProps {
 interface VideoCardListProps {
   curIndex: number
   list: VideoItemProps[]
-  selectItem: (index: number) => void
+  setIndex: (index: number) => void
 }
 
 interface VideoCardPageProps {
@@ -32,29 +37,42 @@ const VideoCard = ({ curIndex, index, item, selectItem }: VideoCardProps) => {
       className={`${styles.BiliVideoCard} ${index === curIndex && styles.BiliVideoCardSelected}`}
     >
       <div className={styles.BiliVideoCardImgWarp}>
-        <img className={styles.BiliVideoCardImg} src={item.pic} title={item.title} />
+        <img
+          className={styles.BiliVideoCardImg}
+          src={item.pic || item.cover}
+          title={item.intro || item.title}
+        />
         <div className={styles.BiliVideoCardStats}></div>
         <BiliVideoCardStatsIcon className={styles.BiliVideoCardStatsIcon} />
-        <span className={styles.BiliVideoCardStatsCount}>{calcBiliPlayCount(item.play)}</span>
-        <span className={styles.BiliVideoCardStatsDuration}>{item.length}</span>
+        <span className={styles.BiliVideoCardStatsCount}>
+          {calcBiliPlayCount(item.play || item.cnt_info.play)}
+        </span>
+        <span className={styles.BiliVideoCardStatsDuration}>
+          {item.length || calcBiliPlayDuration(item.duration)}
+        </span>
       </div>
       <div className={styles.BiliVideoCardInfo}>
-        <div title={item.title}>{item.title}</div>
+        <div title={item.intro || item.title}>{item.title}</div>
         <div className={styles.BiliVideoCardInfoAuthor}>
-          {item.author}&nbsp;&nbsp;{calcBiliVideoDate(item.created)}
+          {item.author || item.upper.name}&nbsp;&nbsp;
+          {calcBiliVideoDate(item.created || item.ctime)}
         </div>
       </div>
     </div>
   )
 }
 
-const VideoCardList = ({ list, curIndex, selectItem }: VideoCardListProps) => {
+const VideoCardList = ({ list, curIndex, setIndex }: VideoCardListProps) => {
+  const selectItem = (index: number) => {
+    setIndex(index)
+    scrollToTop()
+  }
   return (
     <div className={styles.BiliVideoCardWrapper}>
       {list.map((item, index) => {
         return (
           <VideoCard
-            key={item.aid}
+            key={item.aid || item.id}
             curIndex={curIndex}
             index={index}
             item={item}
@@ -94,13 +112,9 @@ const VideoCardPagination = ({ paging, setPaging }: Partial<VideoCardPageProps>)
 }
 
 const VideoCardPage = ({ list, curIndex, setIndex, paging, setPaging }: VideoCardPageProps) => {
-  const selectItem = (index: number) => {
-    setIndex(index)
-    scrollToTop()
-  }
   return (
     <>
-      <VideoCardList list={list} curIndex={curIndex} selectItem={selectItem} />
+      <VideoCardList list={list} curIndex={curIndex} setIndex={setIndex} />
       <VideoCardPagination paging={paging} setPaging={setPaging} />
     </>
   )

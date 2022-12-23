@@ -20,6 +20,22 @@ export const calcBiliVideoDate = (timestamp: number) => {
   return dayjs(timestamp * 1000).format('YYYY-MM-DD')
 }
 
+export const calcBiliPlayDuration = (duration: number) => {
+  if (duration < 60) {
+    return `00:${duration < 10 ? `0${duration}` : duration}`
+  } else if (duration >= 60 && duration < 3600) {
+    const minute = Math.floor(duration / 60)
+    const second = duration % 60
+    return `${minute < 10 ? `0${minute}` : minute}:${second < 10 ? `0${second}` : second}`
+  }
+  const hour = Math.floor(duration / 3600)
+  const minute = Math.floor((duration - hour * 3600) / 60)
+  const second = duration % 60
+  return `${hour < 10 ? `0${hour}` : hour}:${minute < 10 ? `0${minute}` : minute}:${
+    second < 10 ? `0${second}` : second
+  }`
+}
+
 export const scrollToTop = () => {
   const scrollTop = document.documentElement.scrollTop || document.body.scrollTop
   if (scrollTop > 0) {

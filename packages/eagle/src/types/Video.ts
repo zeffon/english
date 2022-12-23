@@ -3,6 +3,7 @@ export interface VideoItemProps {
   author: string
   title: string
   pic: string
+  cover: string
   created?: number
   ctime?: number
   play?: number

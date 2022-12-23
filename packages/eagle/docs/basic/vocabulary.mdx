@@ -1,0 +1,29 @@
+---
+sidebar_position: 2
+sidebar_label: 词汇
+title: ''
+slug: /vocabulary
+---
+
+import { useState } from 'react'
+import { VideoCardList, VideoPlayer } from '@site/src/components/BiliVideo'
+import { vocabularies } from '@site/data/basic'
+
+export const PronunciationFeatures = () => {
+  const [curIndex, setIndex] = useState(0)
+  return (
+    <>
+      <meta name="referrer" content="no-referrer" />
+      <VideoPlayer item={vocabularies[curIndex]} />
+      <VideoCardList list={vocabularies} curIndex={curIndex} setIndex={setIndex} />
+    </>
+  )
+}
+
+:::tip
+
+以下视频内容是来自 B 站的[**`英语兔`**](https://space.bilibili.com/483162496)的[**`词汇`**](https://space.bilibili.com/483162496/favlist?fid=1208491396&ftype=create)视频教程。
+
+:::
+
+<PronunciationFeatures />
