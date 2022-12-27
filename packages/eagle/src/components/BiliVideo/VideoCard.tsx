@@ -37,16 +37,10 @@ const VideoCard = ({ curIndex, index, item, selectItem }: VideoCardProps) => {
       className={`${styles.BiliVideoCard} ${index === curIndex && styles.BiliVideoCardSelected}`}
     >
       <div className={styles.BiliVideoCardImgWarp}>
-        <img
-          className={styles.BiliVideoCardImg}
-          src={item.pic || item.cover}
-          title={item.intro || item.title}
-        />
+        <img className={styles.BiliVideoCardImg} src={item.pic} title={item.intro || item.title} />
         <div className={styles.BiliVideoCardStats}></div>
         <BiliVideoCardStatsIcon className={styles.BiliVideoCardStatsIcon} />
-        <span className={styles.BiliVideoCardStatsCount}>
-          {calcBiliPlayCount(item.play || item.cnt_info.play)}
-        </span>
+        <span className={styles.BiliVideoCardStatsCount}>{calcBiliPlayCount(item.play)}</span>
         <span className={styles.BiliVideoCardStatsDuration}>
           {item.length || calcBiliPlayDuration(item.duration)}
         </span>
@@ -54,8 +48,8 @@ const VideoCard = ({ curIndex, index, item, selectItem }: VideoCardProps) => {
       <div className={styles.BiliVideoCardInfo}>
         <div title={item.intro || item.title}>{item.title}</div>
         <div className={styles.BiliVideoCardInfoAuthor}>
-          {item.author || item.upper.name}&nbsp;&nbsp;
-          {calcBiliVideoDate(item.created || item.ctime)}
+          {item.author}&nbsp;&nbsp;
+          {item.created && calcBiliVideoDate(item.created)}
         </div>
       </div>
     </div>
@@ -72,7 +66,7 @@ const VideoCardList = ({ list, curIndex, setIndex }: VideoCardListProps) => {
       {list.map((item, index) => {
         return (
           <VideoCard
-            key={item.aid || item.id}
+            key={item.aid}
             curIndex={curIndex}
             index={index}
             item={item}
