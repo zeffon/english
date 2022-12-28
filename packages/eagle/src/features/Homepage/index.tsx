@@ -12,15 +12,25 @@ type ModuleProps = {
 const ModuleList: ModuleProps[] = [
   {
     title: '前序阶段',
-    description: <>对英语口语的总体认识（语法，发音，词汇，说话方式等）</>
+    description: (
+      <div>
+        对英语口语的总体认识（<Link to="/symbol/">发音</Link>、
+        <Link to="/docs/pronunce">说话方式</Link>、<Link to="/docs/grammarly">语法</Link>、
+        <Link to="/docs/vocabulary">词汇</Link>
+        等）
+      </div>
+    )
   },
   {
     title: '语音的训练',
     description: (
       <>
-        <div>英语的语音分成pronunciation（发音）和pronunciation features（语音技巧）。</div>
         <div>
-          【第一周·<Link to="/symbol">纠音练习</Link>
+          英语的语音分成pronunciation（<Link to="/symbol/">发音</Link>）和pronunciation features（
+          <Link to="/docs/pronunce">语音技巧</Link>）。
+        </div>
+        <div>
+          【第一周·<Link to="/symbol/">纠音练习</Link>
           】使用<Link to="/docs/pronunciation">教材</Link>
           (剑桥国际英语语音在用初级+中级+高级共3本)和口型模仿素材纠音。
         </div>
