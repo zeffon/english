@@ -1,4 +1,4 @@
-<h1 align="center"><a href="https://english.zeffon.cn" target="_blank">english</a></h1>
+<h1 align="center"><a href="https://english.zeffon.cn" target="_blank">English</a></h1>
 
 <div align="center">
 本英语学习方法来自知乎的帖子 - <a href="https://www.zhihu.com/question/20097263" target="_blank">怎么练好英语口语？</a>的高分回答。
