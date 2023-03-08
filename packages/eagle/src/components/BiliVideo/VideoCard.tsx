@@ -4,7 +4,7 @@ import {
   calcBiliPlayCount,
   calcBiliPlayDuration,
   calcBiliVideoDate,
-  scrollToTop
+  scrollToTop,
 } from '@site/src/utils/helper'
 import type { VideoItemProps } from '@site/src/types/Video'
 import styles from './styles.module.css'
@@ -34,13 +34,21 @@ const VideoCard = ({ curIndex, index, item, selectItem }: VideoCardProps) => {
   return (
     <div
       onClick={() => selectItem(index)}
-      className={`${styles.BiliVideoCard} ${index === curIndex && styles.BiliVideoCardSelected}`}
+      className={`${styles.BiliVideoCard} ${
+        index === curIndex && styles.BiliVideoCardSelected
+      }`}
     >
       <div className={styles.BiliVideoCardImgWarp}>
-        <img className={styles.BiliVideoCardImg} src={item.pic} title={item.intro || item.title} />
+        <img
+          className={styles.BiliVideoCardImg}
+          src={item.pic}
+          title={item.intro || item.title}
+        />
         <div className={styles.BiliVideoCardStats}></div>
         <BiliVideoCardStatsIcon className={styles.BiliVideoCardStatsIcon} />
-        <span className={styles.BiliVideoCardStatsCount}>{calcBiliPlayCount(item.play)}</span>
+        <span className={styles.BiliVideoCardStatsCount}>
+          {calcBiliPlayCount(item.play)}
+        </span>
         <span className={styles.BiliVideoCardStatsDuration}>
           {item.length || calcBiliPlayDuration(item.duration)}
         </span>
@@ -78,7 +86,10 @@ const VideoCardList = ({ list, curIndex, setIndex }: VideoCardListProps) => {
   )
 }
 
-const VideoCardPagination = ({ paging, setPaging }: Partial<VideoCardPageProps>) => {
+const VideoCardPagination = ({
+  paging,
+  setPaging,
+}: Partial<VideoCardPageProps>) => {
   const changePage = (pn: number) => {
     setPaging({ pn })
     scrollToTop()
@@ -96,7 +107,10 @@ const VideoCardPagination = ({ paging, setPaging }: Partial<VideoCardPageProps>)
         上一页
       </div>
       <div
-        className={`${paging.count <= paging.pn * paging.ps && styles.BiliVideoPaginationHidden}`}
+        className={`${
+          paging.count <= paging.pn * paging.ps &&
+          styles.BiliVideoPaginationHidden
+        }`}
         onClick={() => changePage(paging.pn + 1)}
       >
         下一页
@@ -105,7 +119,13 @@ const VideoCardPagination = ({ paging, setPaging }: Partial<VideoCardPageProps>)
   )
 }
 
-const VideoCardPage = ({ list, curIndex, setIndex, paging, setPaging }: VideoCardPageProps) => {
+const VideoCardPage = ({
+  list,
+  curIndex,
+  setIndex,
+  paging,
+  setPaging,
+}: VideoCardPageProps) => {
   return (
     <>
       <VideoCardList list={list} curIndex={curIndex} setIndex={setIndex} />

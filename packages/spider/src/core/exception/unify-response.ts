@@ -7,7 +7,7 @@ import {
   ParameterException,
   ServerErrorException,
   UnAuthenticatedException,
-  UpdateSuccess
+  UpdateSuccess,
 } from './http-exception'
 
 /**

@@ -16,7 +16,7 @@ export const MarkingTrain = () => {
   const [errorMsg, setErrorMsg] = useState('')
   useEffect(async () => {
     const response = await fetch(
-      `https://english.zeffon.cn/spider/v1/bilibili/audio?page=${paging.pn}&count=30&mid=131058159`
+      `https://english.zeffon.cn/spider/v1/bilibili/audio?page=${paging.pn}&count=30&mid=131058159`,
     )
     const json = await response.json()
     const code = json.code
@@ -32,9 +32,12 @@ export const MarkingTrain = () => {
       <meta name="referrer" content="no-referrer" />
       {errorMsg ? (
         <div className={styles.BilibiliError}>
-          <div className={styles.BilibiliErrorMsg}>请求Bilibili接口异常：{errorMsg}</div>
+          <div className={styles.BilibiliErrorMsg}>
+            请求Bilibili接口异常：{errorMsg}
+          </div>
           <div>
-            请自行前往，<a href="https://space.bilibili.com/131058159">传送门</a>
+            请自行前往，
+            <a href="https://space.bilibili.com/131058159">传送门</a>
           </div>
         </div>
       ) : (

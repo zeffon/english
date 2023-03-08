@@ -60,7 +60,7 @@ export const OxfordSentence = () => {
   const [value, setValue] = useState('')
   const debouncedValue = useDebounce(value, { wait: 500 })
   const [historyIdx, setHistoryIdx] = useLocalStorageState('oxford_sentence', {
-    defaultValue: { index: 0, date: '' }
+    defaultValue: { index: 0, date: '' },
   })
   const [sentenceIdx, setSentenceIdx] = useState(() => {
     return historyIdx.index || 0
@@ -68,7 +68,12 @@ export const OxfordSentence = () => {
   useEffect(() => {
     const date = dayjs().format('YYYY-MM-DD')
     if (historyIdx && date !== historyIdx.date) {
-      const index = historyIdx.index >= 159 ? 0 : historyIdx.index === 0 ? 0 : historyIdx.index + 1
+      const index =
+        historyIdx.index >= 159
+          ? 0
+          : historyIdx.index === 0
+          ? 0
+          : historyIdx.index + 1
       setSentenceIdx(index)
       setHistoryIdx({ index, date })
     }
@@ -101,8 +106,14 @@ export const OxfordSentence = () => {
   return (
     <div>
       <SearchBar value={value} setValue={setValue}></SearchBar>
-      {oxfordSentence && <ShowSentence value={oxfordSentences[sentenceIdx]}></ShowSentence>}
-      <SentenceBtn prevHandle={prevHandle} nextHandle={nextHandle} audio={audio}></SentenceBtn>
+      {oxfordSentence && (
+        <ShowSentence value={oxfordSentences[sentenceIdx]}></ShowSentence>
+      )}
+      <SentenceBtn
+        prevHandle={prevHandle}
+        nextHandle={nextHandle}
+        audio={audio}
+      ></SentenceBtn>
     </div>
   )
 }

@@ -1,15 +1,31 @@
 import type { Context } from 'koa'
 import axios from 'axios'
-import { description, prefix, query, request, summary, tags } from 'koa-swagger-decorator'
-import type { CollectVideoInfo, CollectVideoInfo2, VideoInfo } from '~/typings/bilibili'
+import {
+  description,
+  prefix,
+  query,
+  request,
+  summary,
+  tags,
+} from 'koa-swagger-decorator'
+import type {
+  CollectVideoInfo,
+  CollectVideoInfo2,
+  VideoInfo,
+} from '~/typings/bilibili'
 
 const audioSchema = {
   page: { type: 'number', required: false, default: 1 },
   count: { type: 'number', required: false, default: 30 },
-  mid: { type: 'string', required: false, default: '131058159' }
+  mid: { type: 'string', required: false, default: '131058159' },
 }
 
 const tag = tags(['bilibili'])
+
+const BILI_REQUEST_HEADERS = {
+  'User-Agent':
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:32.0) Gecko/20100101 Firefox/32.0',
+}
 
 @prefix('/bilibili')
 export default class SentenceController {
@@ -24,10 +40,7 @@ export default class SentenceController {
     const mid = ctx.query.mid
     const url = `https://api.bilibili.com/x/space/arc/search?mid=${mid}&ps=${count}&tid=0&pn=${page}&keyword=&order=pubdate&order_avoided=true&jsonp=jsonp`
     const { data } = await axios.get(url, {
-      headers: {
-        'User-Agent':
-          'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:32.0) Gecko/20100101 Firefox/32.0'
-      }
+      headers: BILI_REQUEST_HEADERS,
     })
     const code = data.code
     const message = data.message
@@ -51,10 +64,7 @@ export default class SentenceController {
     const mid = ctx.query.mid
     const url = `https://api.bilibili.com/x/v3/fav/resource/list?media_id=${mid}&ps=${count}&pn=${page}&keyword=&order=mtime&type=0&tid=0&platform=web&jsonp=jsonp`
     const { data } = await axios.get(url, {
-      headers: {
-        'User-Agent':
-          'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:32.0) Gecko/20100101 Firefox/32.0'
-      }
+      headers: BILI_REQUEST_HEADERS,
     })
     const list = this.makeCollectList(data.data.medias)
     ctx.body = { list }
@@ -67,7 +77,7 @@ export default class SentenceController {
   @query({
     aid: { type: 'number', required: false, default: 255311341 },
     mid: { type: 'number', required: false, default: 483162496 },
-    seriesId: { type: 'number', required: false, default: 292491 }
+    seriesId: { type: 'number', required: false, default: 292491 },
   })
   async getVideoInfo(ctx: Context) {
     const aid = ctx.query.aid
@@ -75,13 +85,15 @@ export default class SentenceController {
     const seriesId = Number(ctx.query.seriesId)
     const url = `https://api.bilibili.com/x/web-interface/view?aid=${aid}`
     const { data } = await axios.get(url, {
-      headers: {
-        'User-Agent':
-          'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:32.0) Gecko/20100101 Firefox/32.0'
-      }
+      headers: BILI_REQUEST_HEADERS,
     })
     const otherData = await this.fetchSeries(mid, seriesId)
-    const list = this.makeVideoInfo(data.data.aid, data.data.owner.name, data.data.pages, otherData)
+    const list = this.makeVideoInfo(
+      data.data.aid,
+      data.data.owner.name,
+      data.data.pages,
+      otherData,
+    )
     ctx.body = { list }
   }
 
@@ -94,21 +106,23 @@ export default class SentenceController {
       author: item.upper.name,
       created: item.ctime,
       play: item.cnt_info.play,
-      intro: item.intro
+      intro: item.intro,
     }))
   }
 
   async fetchSeries(mid: number, seriesId: number) {
     const collectUrl = `https://api.bilibili.com/x/series/archives?mid=${mid}&series_id=${seriesId}&only_normal=true&sort=desc&pn=1&ps=30`
     const { data } = await axios.get(collectUrl, {
-      headers: {
-        'User-Agent':
-          'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:32.0) Gecko/20100101 Firefox/32.0'
-      }
+      headers: BILI_REQUEST_HEADERS,
     })
     return data.data.archives
   }
-  makeVideoInfo(aid: number, author: string, list: VideoInfo[], otherList: CollectVideoInfo2[]) {
+  makeVideoInfo(
+    aid: number,
+    author: string,
+    list: VideoInfo[],
+    otherList: CollectVideoInfo2[],
+  ) {
     return list.map((item, index) => ({
       aid: aid,
       page: item.page,
@@ -118,7 +132,7 @@ export default class SentenceController {
       pic: otherList[index].pic,
       intro: otherList[index].title,
       created: otherList[index].ctime,
-      play: otherList[index].stat.view
+      play: otherList[index].stat.view,
     }))
   }
 }

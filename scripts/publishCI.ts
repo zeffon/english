@@ -18,7 +18,7 @@ async function main() {
   const { currentVersion, pkgDir } = getPackageInfo(pkgName)
   if (currentVersion !== version)
     throw new Error(
-      `Package version from tag "${version}" mismatches with current version "${currentVersion}"`
+      `Package version from tag "${version}" mismatches with current version "${currentVersion}"`,
     )
 
   step('Publishing package...')

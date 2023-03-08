@@ -19,12 +19,12 @@ export const symbols: SymbolProps[] = [
     name: '/ i: /',
     yingyutu: {
       aid: '414096645',
-      page: 7
+      page: 7,
     },
     bbc: {
       aid: '54685652',
-      page: 3
-    }
+      page: 3,
+    },
   },
   {
     id: 2,
@@ -32,12 +32,12 @@ export const symbols: SymbolProps[] = [
     name: '/ ɪ /',
     yingyutu: {
       aid: '414096645',
-      page: 8
+      page: 8,
     },
     bbc: {
       aid: '54685652',
-      page: 2
-    }
+      page: 2,
+    },
   },
   {
     id: 3,
@@ -45,12 +45,12 @@ export const symbols: SymbolProps[] = [
     name: '/ u: /',
     yingyutu: {
       aid: '414096645',
-      page: 9
+      page: 9,
     },
     bbc: {
       aid: '54685652',
-      page: 5
-    }
+      page: 5,
+    },
   },
   {
     id: 4,
@@ -58,12 +58,12 @@ export const symbols: SymbolProps[] = [
     name: '/ ʊ /',
     yingyutu: {
       aid: '414096645',
-      page: 10
+      page: 10,
     },
     bbc: {
       aid: '54685652',
-      page: 4
-    }
+      page: 4,
+    },
   },
   {
     id: 5,
@@ -71,12 +71,12 @@ export const symbols: SymbolProps[] = [
     name: '/ e /',
     yingyutu: {
       aid: '414096645',
-      page: 11
+      page: 11,
     },
     bbc: {
       aid: '54685652',
-      page: 12
-    }
+      page: 12,
+    },
   },
   {
     id: 6,
@@ -84,12 +84,12 @@ export const symbols: SymbolProps[] = [
     name: '/ ɜ: /',
     yingyutu: {
       aid: '414096645',
-      page: 12
+      page: 12,
     },
     bbc: {
       aid: '54685652',
-      page: 11
-    }
+      page: 11,
+    },
   },
   {
     id: 7,
@@ -97,12 +97,12 @@ export const symbols: SymbolProps[] = [
     name: '/ ə /',
     yingyutu: {
       aid: '414096645',
-      page: 13
+      page: 13,
     },
     bbc: {
       aid: '54685652',
-      page: 10
-    }
+      page: 10,
+    },
   },
   {
     id: 8,
@@ -110,12 +110,12 @@ export const symbols: SymbolProps[] = [
     name: '/ ʌ /',
     yingyutu: {
       aid: '414096645',
-      page: 14
+      page: 14,
     },
     bbc: {
       aid: '54685652',
-      page: 6
-    }
+      page: 6,
+    },
   },
   {
     id: 9,
@@ -123,12 +123,12 @@ export const symbols: SymbolProps[] = [
     name: '/ ɔ: /',
     yingyutu: {
       aid: '414096645',
-      page: 15
+      page: 15,
     },
     bbc: {
       aid: '54685652',
-      page: 9
-    }
+      page: 9,
+    },
   },
   {
     id: 10,
@@ -136,12 +136,12 @@ export const symbols: SymbolProps[] = [
     name: '/ æ /',
     yingyutu: {
       aid: '414096645',
-      page: 16
+      page: 16,
     },
     bbc: {
       aid: '54685652',
-      page: 13
-    }
+      page: 13,
+    },
   },
   {
     id: 11,
@@ -149,12 +149,12 @@ export const symbols: SymbolProps[] = [
     name: '/ ɑ: /',
     yingyutu: {
       aid: '414096645',
-      page: 17
+      page: 17,
     },
     bbc: {
       aid: '54685652',
-      page: 7
-    }
+      page: 7,
+    },
   },
   {
     id: 12,
@@ -162,12 +162,12 @@ export const symbols: SymbolProps[] = [
     name: '/ ɒ /',
     yingyutu: {
       aid: '414096645',
-      page: 18
+      page: 18,
     },
     bbc: {
       aid: '54685652',
-      page: 8
-    }
+      page: 8,
+    },
   },
   {
     id: 13,
@@ -175,12 +175,12 @@ export const symbols: SymbolProps[] = [
     name: '/ eɪ /',
     yingyutu: {
       aid: '414096645',
-      page: 19
+      page: 19,
     },
     bbc: {
       aid: '54685652',
-      page: 21
-    }
+      page: 21,
+    },
   },
   {
     id: 14,
@@ -188,12 +188,12 @@ export const symbols: SymbolProps[] = [
     name: '/ aɪ /',
     yingyutu: {
       aid: '414096645',
-      page: 21
+      page: 21,
     },
     bbc: {
       aid: '54685652',
-      page: 16
-    }
+      page: 16,
+    },
   },
   {
     id: 15,
@@ -201,12 +201,12 @@ export const symbols: SymbolProps[] = [
     name: '/ ɔɪ /',
     yingyutu: {
       aid: '414096645',
-      page: 20
+      page: 20,
     },
     bbc: {
       aid: '54685652',
-      page: 17
-    }
+      page: 17,
+    },
   },
   {
     id: 16,
@@ -214,12 +214,12 @@ export const symbols: SymbolProps[] = [
     name: '/ aʊ /',
     yingyutu: {
       aid: '414096645',
-      page: 22
+      page: 22,
     },
     bbc: {
       aid: '54685652',
-      page: 20
-    }
+      page: 20,
+    },
   },
   {
     id: 17,
@@ -227,12 +227,12 @@ export const symbols: SymbolProps[] = [
     name: '/ əʊ /',
     yingyutu: {
       aid: '414096645',
-      page: 23
+      page: 23,
     },
     bbc: {
       aid: '54685652',
-      page: 18
-    }
+      page: 18,
+    },
   },
   {
     id: 18,
@@ -240,12 +240,12 @@ export const symbols: SymbolProps[] = [
     name: '/ ʊə /',
     yingyutu: {
       aid: '414096645',
-      page: 24
+      page: 24,
     },
     bbc: {
       aid: '54685652',
-      page: 15
-    }
+      page: 15,
+    },
   },
   {
     id: 19,
@@ -253,12 +253,12 @@ export const symbols: SymbolProps[] = [
     name: '/ eə /',
     yingyutu: {
       aid: '414096645',
-      page: 25
+      page: 25,
     },
     bbc: {
       aid: '54685652',
-      page: 19
-    }
+      page: 19,
+    },
   },
   {
     id: 20,
@@ -266,12 +266,12 @@ export const symbols: SymbolProps[] = [
     name: '/ ɪə /',
     yingyutu: {
       aid: '414096645',
-      page: 26
+      page: 26,
     },
     bbc: {
       aid: '54685652',
-      page: 14
-    }
+      page: 14,
+    },
   },
   {
     id: 21,
@@ -279,12 +279,12 @@ export const symbols: SymbolProps[] = [
     name: '/ p /',
     yingyutu: {
       aid: '414096645',
-      page: 28
+      page: 28,
     },
     bbc: {
       aid: '54685652',
-      page: 23
-    }
+      page: 23,
+    },
   },
   {
     id: 22,
@@ -292,12 +292,12 @@ export const symbols: SymbolProps[] = [
     name: '/ b /',
     yingyutu: {
       aid: '414096645',
-      page: 28
+      page: 28,
     },
     bbc: {
       aid: '54685652',
-      page: 24
-    }
+      page: 24,
+    },
   },
   {
     id: 23,
@@ -305,12 +305,12 @@ export const symbols: SymbolProps[] = [
     name: '/ t /',
     yingyutu: {
       aid: '414096645',
-      page: 29
+      page: 29,
     },
     bbc: {
       aid: '54685652',
-      page: 25
-    }
+      page: 25,
+    },
   },
   {
     id: 24,
@@ -318,12 +318,12 @@ export const symbols: SymbolProps[] = [
     name: '/ d /',
     yingyutu: {
       aid: '414096645',
-      page: 29
+      page: 29,
     },
     bbc: {
       aid: '54685652',
-      page: 26
-    }
+      page: 26,
+    },
   },
   {
     id: 25,
@@ -331,12 +331,12 @@ export const symbols: SymbolProps[] = [
     name: '/ k /',
     yingyutu: {
       aid: '414096645',
-      page: 30
+      page: 30,
     },
     bbc: {
       aid: '54685652',
-      page: 27
-    }
+      page: 27,
+    },
   },
   {
     id: 26,
@@ -344,12 +344,12 @@ export const symbols: SymbolProps[] = [
     name: '/ g /',
     yingyutu: {
       aid: '414096645',
-      page: 30
+      page: 30,
     },
     bbc: {
       aid: '54685652',
-      page: 28
-    }
+      page: 28,
+    },
   },
   {
     id: 27,
@@ -357,12 +357,12 @@ export const symbols: SymbolProps[] = [
     name: '/ m /',
     yingyutu: {
       aid: '414096645',
-      page: 31
+      page: 31,
     },
     bbc: {
       aid: '54685652',
-      page: 39
-    }
+      page: 39,
+    },
   },
   {
     id: 28,
@@ -370,12 +370,12 @@ export const symbols: SymbolProps[] = [
     name: '/ n /',
     yingyutu: {
       aid: '414096645',
-      page: 31
+      page: 31,
     },
     bbc: {
       aid: '54685652',
-      page: 40
-    }
+      page: 40,
+    },
   },
   {
     id: 29,
@@ -383,12 +383,12 @@ export const symbols: SymbolProps[] = [
     name: '/ ŋ /',
     yingyutu: {
       aid: '414096645',
-      page: 31
+      page: 31,
     },
     bbc: {
       aid: '54685652',
-      page: 41
-    }
+      page: 41,
+    },
   },
   {
     id: 30,
@@ -396,12 +396,12 @@ export const symbols: SymbolProps[] = [
     name: '/ f /',
     yingyutu: {
       aid: '414096645',
-      page: 32
+      page: 32,
     },
     bbc: {
       aid: '54685652',
-      page: 29
-    }
+      page: 29,
+    },
   },
   {
     id: 31,
@@ -409,12 +409,12 @@ export const symbols: SymbolProps[] = [
     name: '/ v /',
     yingyutu: {
       aid: '414096645',
-      page: 32
+      page: 32,
     },
     bbc: {
       aid: '54685652',
-      page: 30
-    }
+      page: 30,
+    },
   },
   {
     id: 32,
@@ -422,12 +422,12 @@ export const symbols: SymbolProps[] = [
     name: '/ s /',
     yingyutu: {
       aid: '414096645',
-      page: 33
+      page: 33,
     },
     bbc: {
       aid: '54685652',
-      page: 33
-    }
+      page: 33,
+    },
   },
   {
     id: 33,
@@ -435,12 +435,12 @@ export const symbols: SymbolProps[] = [
     name: '/ z /',
     yingyutu: {
       aid: '414096645',
-      page: 33
+      page: 33,
     },
     bbc: {
       aid: '54685652',
-      page: 34
-    }
+      page: 34,
+    },
   },
   {
     id: 34,
@@ -448,12 +448,12 @@ export const symbols: SymbolProps[] = [
     name: '/ θ /',
     yingyutu: {
       aid: '414096645',
-      page: 34
+      page: 34,
     },
     bbc: {
       aid: '54685652',
-      page: 31
-    }
+      page: 31,
+    },
   },
   {
     id: 35,
@@ -461,12 +461,12 @@ export const symbols: SymbolProps[] = [
     name: '/ ð /',
     yingyutu: {
       aid: '414096645',
-      page: 34
+      page: 34,
     },
     bbc: {
       aid: '54685652',
-      page: 32
-    }
+      page: 32,
+    },
   },
   {
     id: 36,
@@ -474,12 +474,12 @@ export const symbols: SymbolProps[] = [
     name: '/ ʃ /',
     yingyutu: {
       aid: '414096645',
-      page: 35
+      page: 35,
     },
     bbc: {
       aid: '54685652',
-      page: 35
-    }
+      page: 35,
+    },
   },
   {
     id: 37,
@@ -487,12 +487,12 @@ export const symbols: SymbolProps[] = [
     name: '/ ʒ /',
     yingyutu: {
       aid: '414096645',
-      page: 35
+      page: 35,
     },
     bbc: {
       aid: '54685652',
-      page: 36
-    }
+      page: 36,
+    },
   },
   {
     id: 38,
@@ -500,12 +500,12 @@ export const symbols: SymbolProps[] = [
     name: '/ h /',
     yingyutu: {
       aid: '414096645',
-      page: 37
+      page: 37,
     },
     bbc: {
       aid: '54685652',
-      page: 42
-    }
+      page: 42,
+    },
   },
   {
     id: 39,
@@ -513,12 +513,12 @@ export const symbols: SymbolProps[] = [
     name: '/ tʃ /',
     yingyutu: {
       aid: '414096645',
-      page: 36
+      page: 36,
     },
     bbc: {
       aid: '54685652',
-      page: 37
-    }
+      page: 37,
+    },
   },
   {
     id: 40,
@@ -526,12 +526,12 @@ export const symbols: SymbolProps[] = [
     name: '/ dʒ /',
     yingyutu: {
       aid: '414096645',
-      page: 36
+      page: 36,
     },
     bbc: {
       aid: '54685652',
-      page: 38
-    }
+      page: 38,
+    },
   },
   {
     id: 41,
@@ -539,12 +539,12 @@ export const symbols: SymbolProps[] = [
     name: '/ w /',
     yingyutu: {
       aid: '414096645',
-      page: 38
+      page: 38,
     },
     bbc: {
       aid: '54685652',
-      page: 45
-    }
+      page: 45,
+    },
   },
   {
     id: 42,
@@ -552,12 +552,12 @@ export const symbols: SymbolProps[] = [
     name: '/ r /',
     yingyutu: {
       aid: '414096645',
-      page: 39
+      page: 39,
     },
     bbc: {
       aid: '54685652',
-      page: 44
-    }
+      page: 44,
+    },
   },
   {
     id: 43,
@@ -565,12 +565,12 @@ export const symbols: SymbolProps[] = [
     name: '/ j /',
     yingyutu: {
       aid: '414096645',
-      page: 40
+      page: 40,
     },
     bbc: {
       aid: '54685652',
-      page: 46
-    }
+      page: 46,
+    },
   },
   {
     id: 44,
@@ -578,61 +578,71 @@ export const symbols: SymbolProps[] = [
     name: '/ l /',
     yingyutu: {
       aid: '414096645',
-      page: 41
+      page: 41,
     },
     bbc: {
       aid: '54685652',
-      page: 43
-    }
+      page: 43,
+    },
   },
   {
     id: 45,
     name: '/ ts /',
     yingyutu: {
       aid: '414096645',
-      page: 42
-    }
+      page: 42,
+    },
   },
   {
     id: 46,
     name: '/ dz /',
     yingyutu: {
       aid: '414096645',
-      page: 42
-    }
+      page: 42,
+    },
   },
   {
     id: 47,
     name: '/ tr /',
     yingyutu: {
       aid: '414096645',
-      page: 43
-    }
+      page: 43,
+    },
   },
   {
     id: 48,
     name: '/ dr /',
     yingyutu: {
       aid: '414096645',
-      page: 43
-    }
-  }
+      page: 43,
+    },
+  },
 ]
 
 export const singleVowels = symbols.filter((item) => item.id <= 12)
-export const bbcSingleVowels = singleVowels.slice().sort((a, b) => a.bbc_idx! - b.bbc_idx!)
+export const bbcSingleVowels = singleVowels
+  .slice()
+  .sort((a, b) => a.bbc_idx! - b.bbc_idx!)
 
-export const doubleVowels = symbols.filter((item) => item.id > 12 && item.id <= 20)
-export const bbcDoubleVowels = doubleVowels.slice().sort((a, b) => a.bbc_idx! - b.bbc_idx!)
+export const doubleVowels = symbols.filter(
+  (item) => item.id > 12 && item.id <= 20,
+)
+export const bbcDoubleVowels = doubleVowels
+  .slice()
+  .sort((a, b) => a.bbc_idx! - b.bbc_idx!)
 
 export const plosive = symbols.filter((item) => item.id > 20 && item.id <= 26)
-export const bbcPlosive = plosive.slice().sort((a, b) => a.bbc_idx! - b.bbc_idx!)
+export const bbcPlosive = plosive
+  .slice()
+  .sort((a, b) => a.bbc_idx! - b.bbc_idx!)
 
 export const nasal = symbols.filter((item) => item.id > 26 && item.id <= 29)
 export const bbcNasal = nasal.slice().sort((a, b) => a.bbc_idx! - b.bbc_idx!)
 
 export const fricative = symbols.filter((item) => item.id > 29 && item.id <= 38)
-export const bbcFricative = fricative.slice().sort((a, b) => a.bbc_idx! - b.bbc_idx!)
+export const bbcFricative = fricative
+  .slice()
+  .sort((a, b) => a.bbc_idx! - b.bbc_idx!)
 
 export const otherConsonant = symbols.filter((item) => item.id > 38)
 export const bbcOtherConsonant = symbols
@@ -644,11 +654,11 @@ export const symbolIntroItems = [
   { value: 'sound', label: '发音过程', aid: '414096645', page: 4 },
   { value: 'vowels', label: '元音', aid: '414096645', page: 5 },
   { value: 'vowelChart', label: '元音图', aid: '414096645', page: 6 },
-  { value: 'consonants', label: '辅音', aid: '414096645', page: 27 }
+  { value: 'consonants', label: '辅音', aid: '414096645', page: 27 },
 ]
 
 export const symbolDemoItems = [
   { value: 'dj', label: 'DJ音标示范', aid: '414096645', page: 44 },
   { value: 'kk', label: 'KK音标示范', aid: '414096645', page: 45 },
-  { value: 'ipa', label: '国际音标示范', aid: '414096645', page: 46 }
+  { value: 'ipa', label: '国际音标示范', aid: '414096645', page: 46 },
 ]

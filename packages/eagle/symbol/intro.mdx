@@ -15,7 +15,11 @@ export const IntroContainer = () => {
     <Tabs className="unique-tabs flex-row-center">
       {symbolIntroItems.map((item, idx) => {
         return (
-          <TabItem value={item.value} label={`${idx + 1}. ${item.label}`} key={idx}>
+          <TabItem
+            value={item.value}
+            label={`${idx + 1}. ${item.label}`}
+            key={idx}
+          >
             <div className="flex-row-center">
               <BilibiliEmbedRenderer aid={item.aid} page={item.page} />
             </div>

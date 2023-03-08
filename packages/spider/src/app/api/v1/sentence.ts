@@ -1,5 +1,11 @@
 import type { Context } from 'koa'
-import { description, prefix, request, summary, tags } from 'koa-swagger-decorator'
+import {
+  description,
+  prefix,
+  request,
+  summary,
+  tags,
+} from 'koa-swagger-decorator'
 import puppeteer from 'puppeteer'
 
 const tag = tags(['sentence'])
@@ -15,8 +21,8 @@ export default class SentenceController {
       headless: true,
       defaultViewport: {
         width: 500,
-        height: 2000
-      }
+        height: 2000,
+      },
     })
     const page = await browser.newPage()
     await page.goto('https://dict.eudic.net/home/dailysentence')

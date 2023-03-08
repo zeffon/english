@@ -11,7 +11,7 @@ import {
   run,
   runIfNotDry,
   step,
-  updateVersion
+  updateVersion,
 } from './releaseUtils'
 
 async function main(): Promise<void> {
@@ -21,7 +21,7 @@ async function main(): Promise<void> {
     type: 'select',
     name: 'pkg',
     message: 'Select package',
-    choices: packages.map((i) => ({ value: i, title: i }))
+    choices: packages.map((i) => ({ value: i, title: i })),
   })
 
   if (!pkg) return
@@ -35,7 +35,7 @@ async function main(): Promise<void> {
       type: 'select',
       name: 'release',
       message: 'Select release type',
-      choices: getVersionChoices(currentVersion)
+      choices: getVersionChoices(currentVersion),
     })
 
     if (release === 'custom') {
@@ -43,7 +43,7 @@ async function main(): Promise<void> {
         type: 'text',
         name: 'version',
         message: 'Input custom version',
-        initial: currentVersion
+        initial: currentVersion,
       })
       targetVersion = res.version
     } else {
@@ -55,7 +55,8 @@ async function main(): Promise<void> {
     throw new Error(`invalid target version: ${targetVersion}`)
   }
 
-  const tag = pkgName === 'eagle' ? `v${targetVersion}` : `${pkgName}@${targetVersion}`
+  const tag =
+    pkgName === 'eagle' ? `v${targetVersion}` : `${pkgName}@${targetVersion}`
 
   if (targetVersion.includes('beta') && !args.tag) {
     args.tag = 'beta'
@@ -64,7 +65,7 @@ async function main(): Promise<void> {
   const { yes }: { yes: boolean } = await prompts({
     type: 'confirm',
     name: 'yes',
-    message: `Releasing ${colors.yellow(tag)} Confirm?`
+    message: `Releasing ${colors.yellow(tag)} Confirm?`,
   })
 
   if (!yes) {
@@ -83,7 +84,7 @@ async function main(): Promise<void> {
     'CHANGELOG.md',
     '-s',
     '--commit-path',
-    '.'
+    '.',
   ]
   if (pkgName !== 'eagle') changelogArgs.push('--lerna-package')
   await run('npx', changelogArgs, { cwd: pkgDir })
@@ -108,8 +109,8 @@ async function main(): Promise<void> {
   } else {
     console.log(
       colors.green(
-        '\nPushed, publishing should starts shortly on CI.\nhttps://github.com/zeffon/english/actions/workflows/publish.yml'
-      )
+        '\nPushed, publishing should starts shortly on CI.\nhttps://github.com/zeffon/english/actions/workflows/publish.yml',
+      ),
     )
   }
 

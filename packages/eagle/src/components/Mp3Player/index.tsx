@@ -31,7 +31,7 @@ const useAudio = (props: IAudioProps) => {
     ref,
     onPlay: wrapEvent(onPlay),
     onPause: wrapEvent(onPause),
-    onEnded: wrapEvent(onPause)
+    onEnded: wrapEvent(onPause),
   })
 
   let lockPlay: boolean = false
@@ -64,16 +64,20 @@ const useAudio = (props: IAudioProps) => {
         setPaused(true)
         return el.pause()
       }
-    }
+    },
   }
 
   return [
     <div className={styles.audio}>
       {element}
-      {paused ? <PlayIcon onClick={controls.play} /> : <PauseIcon onClick={controls.pause} />}
+      {paused ? (
+        <PlayIcon onClick={controls.play} />
+      ) : (
+        <PauseIcon onClick={controls.pause} />
+      )}
     </div>,
     controls,
-    ref
+    ref,
   ] as const
 }
 

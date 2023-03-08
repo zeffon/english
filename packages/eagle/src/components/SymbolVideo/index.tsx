@@ -22,7 +22,9 @@ const SymbolVideo = ({ data, mode }: SymbolVideoProps): JSX.Element => {
             <div
               key={item.id}
               onClick={() => setSymbol(item)}
-              className={`${styles.symbolItem} ${item.id === curSymbol.id && styles.isActive}`}
+              className={`${styles.symbolItem} ${
+                item.id === curSymbol.id && styles.isActive
+              }`}
             >
               {item.name}
             </div>
@@ -30,7 +32,10 @@ const SymbolVideo = ({ data, mode }: SymbolVideoProps): JSX.Element => {
         })}
       </div>
       {mode !== BOTH_MODE && (
-        <BilibiliEmbedRenderer aid={curSymbol[mode].aid} page={curSymbol[mode].page} />
+        <BilibiliEmbedRenderer
+          aid={curSymbol[mode].aid}
+          page={curSymbol[mode].page}
+        />
       )}
       {mode === BOTH_MODE && (
         <div className={styles.symbolBothVideo}>

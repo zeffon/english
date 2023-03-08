@@ -11,13 +11,18 @@ import dayjs from 'dayjs'
 import CurrentTime from '@site/src/components/CurrentTime'
 
 export const DailySentence = () => {
-  const [heightStore, setHeightStore] = useLocalStorageState('sentence_height', {
-    defaultValue: { height: 1200, date: '' }
-  })
+  const [heightStore, setHeightStore] = useLocalStorageState(
+    'sentence_height',
+    {
+      defaultValue: { height: 1200, date: '' },
+    },
+  )
   useEffect(async () => {
     const date = dayjs().format('YYYY-MM-DD')
     if (heightStore && date !== heightStore.date) {
-      const response = await fetch(`https://english.zeffon.cn/spider/v1/sentence/height`)
+      const response = await fetch(
+        `https://english.zeffon.cn/spider/v1/sentence/height`,
+      )
       const json = await response.json()
       const height = json.height || 1200
       setHeightStore({ height, date })

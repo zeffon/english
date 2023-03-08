@@ -10,7 +10,11 @@ const VideoPlayer = ({ item }) => {
     <>
       {item && (
         <div ref={ref} className={styles.BiliVideoPlayer} id="bili-player">
-          <BilibiliEmbedRenderer aid={item.aid} width={size && size.width} page={item?.page} />
+          <BilibiliEmbedRenderer
+            aid={item.aid}
+            width={size && size.width}
+            page={item?.page}
+          />
         </div>
       )}
     </>

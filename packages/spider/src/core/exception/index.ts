@@ -7,7 +7,10 @@ const UNDEDINED_ERROR_TIP = 'undefined errorCode'
 /**
  * Global exception catch
  */
-export default async function catchError(ctx: Koa.Context, next: any): Promise<void> {
+export default async function catchError(
+  ctx: Koa.Context,
+  next: any,
+): Promise<void> {
   try {
     await next()
   } catch (error: any) {
@@ -21,14 +24,14 @@ export default async function catchError(ctx: Koa.Context, next: any): Promise<v
       const data = {
         code,
         message,
-        request
+        request,
       }
       ctx.body = data
     } else if (error.status !== 500) {
       const data = {
         code: 10001,
         message: error.message || CODE.get(10001),
-        request
+        request,
       }
       ctx.body = data
       ctx.status = error.status || 500
@@ -36,7 +39,7 @@ export default async function catchError(ctx: Koa.Context, next: any): Promise<v
       const data = {
         code: 9999,
         message: CODE.get(9999),
-        request
+        request,
       }
       ctx.body = data
       ctx.status = error.status || 500

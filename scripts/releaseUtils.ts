@@ -52,14 +52,14 @@ export function getPackageInfo(pkgName: string): {
     pkgName,
     pkgDir,
     pkgPath,
-    currentVersion
+    currentVersion,
   }
 }
 
 export async function run(
   bin: string,
   args: string[],
-  opts: ExecaOptions<string> = {}
+  opts: ExecaOptions<string> = {},
 ): Promise<ExecaReturnValue<string>> {
   return execa(bin, args, { stdio: 'inherit', ...opts })
 }
@@ -67,9 +67,12 @@ export async function run(
 export async function dryRun(
   bin: string,
   args: string[],
-  opts?: ExecaOptions<string>
+  opts?: ExecaOptions<string>,
 ): Promise<void> {
-  return console.log(colors.blue(`[dryrun] ${bin} ${args.join(' ')}`), opts || '')
+  return console.log(
+    colors.blue(`[dryrun] ${bin} ${args.join(' ')}`),
+    opts || '',
+  )
 }
 
 export const runIfNotDry = isDryRun ? dryRun : run
@@ -94,46 +97,46 @@ export function getVersionChoices(currentVersion: string): VersionChoice[] {
   let versionChoices: VersionChoice[] = [
     {
       title: 'next',
-      value: inc(isStable ? 'patch' : 'prerelease')
-    }
+      value: inc(isStable ? 'patch' : 'prerelease'),
+    },
   ]
 
   if (isStable) {
     versionChoices.push(
       {
         title: 'beta-minor',
-        value: inc('preminor')
+        value: inc('preminor'),
       },
       {
         title: 'beta-major',
-        value: inc('premajor')
+        value: inc('premajor'),
       },
       {
         title: 'alpha-minor',
-        value: inc('preminor', 'alpha')
+        value: inc('preminor', 'alpha'),
       },
       {
         title: 'alpha-major',
-        value: inc('premajor', 'alpha')
+        value: inc('premajor', 'alpha'),
       },
       {
         title: 'minor',
-        value: inc('minor')
+        value: inc('minor'),
       },
       {
         title: 'major',
-        value: inc('major')
-      }
+        value: inc('major'),
+      },
     )
   } else if (currentAlpha) {
     versionChoices.push({
       title: 'beta',
-      value: inc('patch') + '-beta.0'
+      value: inc('patch') + '-beta.0',
     })
   } else {
     versionChoices.push({
       title: 'stable',
-      value: inc('patch')
+      value: inc('patch'),
     })
   }
   versionChoices.push({ value: 'custom', title: 'custom' })
@@ -152,18 +155,23 @@ export function updateVersion(pkgPath: string, version: string): void {
   writeFileSync(pkgPath, JSON.stringify(pkg, null, 2) + '\n')
 }
 
-export async function publishPackage(pkdDir: string, tag?: string): Promise<void> {
+export async function publishPackage(
+  pkdDir: string,
+  tag?: string,
+): Promise<void> {
   const publicArgs = ['publish', '--access', 'public']
   if (tag) {
     publicArgs.push(`--tag`, tag)
   }
   await runIfNotDry('npm', publicArgs, {
-    cwd: pkdDir
+    cwd: pkdDir,
   })
 }
 
 export async function getLatestTag(pkgName: string): Promise<string> {
-  const tags = (await run('git', ['tag'], { stdio: 'pipe' })).stdout.split(/\n/).filter(Boolean)
+  const tags = (await run('git', ['tag'], { stdio: 'pipe' })).stdout
+    .split(/\n/)
+    .filter(Boolean)
   const prefix = pkgName === 'eagle' ? 'v' : `${pkgName}@`
   return tags
     .filter((tag) => tag.startsWith(prefix))
@@ -175,19 +183,26 @@ export async function logRecentCommits(pkgName: string): Promise<void> {
   const tag = await getLatestTag(pkgName)
   if (!tag) return
   const sha = await run('git', ['rev-list', '-n', '1', tag], {
-    stdio: 'pipe'
+    stdio: 'pipe',
   }).then((res) => res.stdout.trim())
   console.log(
     colors.bold(
-      `\n${colors.blue(`i`)} Commits of ${colors.green(pkgName)} since ${colors.green(
-        tag
-      )} ${colors.gray(`(${sha.slice(0, 5)})`)}`
-    )
+      `\n${colors.blue(`i`)} Commits of ${colors.green(
+        pkgName,
+      )} since ${colors.green(tag)} ${colors.gray(`(${sha.slice(0, 5)})`)}`,
+    ),
   )
   await run(
     'git',
-    ['--no-pager', 'log', `${sha}..HEAD`, '--oneline', '--', `packages/${pkgName}`],
-    { stdio: 'inherit' }
+    [
+      '--no-pager',
+      'log',
+      `${sha}..HEAD`,
+      '--oneline',
+      '--',
+      `packages/${pkgName}`,
+    ],
+    { stdio: 'inherit' },
   )
   console.log()
 }

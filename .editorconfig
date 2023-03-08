@@ -1,16 +1,9 @@
-# Editor configuration, see http://editorconfig.org
-# webstorem already built in, other like vscode, ATOM, Sublime need to install plugin
-# vscode use ( shift + alt + f )
 root = true
 
-[*] #
+[*]
 charset = utf-8
 indent_style = space
 indent_size = 2
 end_of_line = lf
-trim_trailing_whitespace = true
 insert_final_newline = true
-
-[*.md]
-max_line_length = off
-trim_trailing_whitespace = false
+trim_trailing_whitespace = true

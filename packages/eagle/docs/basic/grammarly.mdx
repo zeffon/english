@@ -15,7 +15,11 @@ export const PronunciationFeatures = () => {
     <>
       <meta name="referrer" content="no-referrer" />
       <VideoPlayer item={grammarlies[curIndex]} />
-      <VideoCardList list={grammarlies} curIndex={curIndex} setIndex={setIndex} />
+      <VideoCardList
+        list={grammarlies}
+        curIndex={curIndex}
+        setIndex={setIndex}
+      />
     </>
   )
 }

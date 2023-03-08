@@ -15,18 +15,20 @@ const ModuleList: ModuleProps[] = [
     description: (
       <div>
         对英语口语的总体认识（<Link to="/symbol/">发音</Link>、
-        <Link to="/docs/pronunce">说话方式</Link>、<Link to="/docs/grammarly">语法</Link>、
+        <Link to="/docs/pronunce">说话方式</Link>、
+        <Link to="/docs/grammarly">语法</Link>、
         <Link to="/docs/vocabulary">词汇</Link>
         等）
       </div>
-    )
+    ),
   },
   {
     title: '语音的训练',
     description: (
       <>
         <div>
-          英语的语音分成pronunciation（<Link to="/symbol/">发音</Link>）和pronunciation features（
+          英语的语音分成pronunciation（<Link to="/symbol/">发音</Link>
+          ）和pronunciation features（
           <Link to="/docs/pronunce">语音技巧</Link>）。
         </div>
         <div>
@@ -39,7 +41,7 @@ const ModuleList: ModuleProps[] = [
           】跟读牛津160句，每天5句话，进行语音标记并从小到大，逐词，逐短语，逐句地进行跟读练习，次数不限，最好可以脱口而出。
         </div>
       </>
-    )
+    ),
   },
   {
     title: '对话的流畅和拓展',
@@ -50,7 +52,7 @@ const ModuleList: ModuleProps[] = [
         <div>【句】并且用所背单词进行造句练习</div>
         <div>【想法】再把句子应用到该单词意思可以应用到的场景下</div>
       </>
-    )
+    ),
   },
   {
     title: '语料的积累',
@@ -66,12 +68,14 @@ const ModuleList: ModuleProps[] = [
         <div>
           【第五周】开始结合剧集和造句练习，把剧集中的词或者句联想场景并且应用进去，反复操练。
         </div>
-        <div>【第六周】继续结合词汇造句练习，尝试把词和句联想应用进不同场景，并且演练。</div>
+        <div>
+          【第六周】继续结合词汇造句练习，尝试把词和句联想应用进不同场景，并且演练。
+        </div>
         <div>
           【第七&八周】对应美剧的台词，造句练习的联想语段，和每天学习过的单词进行复盘，背诵。这个阶段相对应该非常简单了，因为如果之前按照此方法做了的话，就会发现很多东西已经养成了口腔肌肉习惯，再背诵就很容易（能用语感顺下来-脱口而出）。
         </div>
       </>
-    )
+    ),
   },
   {
     title: '实战训练',
@@ -79,13 +83,15 @@ const ModuleList: ModuleProps[] = [
       <>
         <div>实战对象：外国留学生，英美澳新人</div>
         <div>训练内容：聊天</div>
-        <div>注意：请待在自己的comfort zone里，尝试着把话题引到【造句练习的场景】中</div>
+        <div>
+          注意：请待在自己的comfort zone里，尝试着把话题引到【造句练习的场景】中
+        </div>
         <div>
           请一定要自信，不要紧张。不要担心犯错，母语为英语的人依然会经常犯错，换位思考，如果一个中文犯错的外国人，我们会有什么感觉？完全可以容忍，也没啥感觉对吧？所以请一定不要担心犯错。
         </div>
       </>
-    )
-  }
+    ),
+  },
 ]
 
 function ModuleItem({ title, description, idx }: ModuleProps) {
@@ -106,7 +112,10 @@ export default function HomepageFeatures(): JSX.Element {
       <div className="container">
         <div className={styles.prologue}>
           本英语学习方法来自知乎的帖子 -
-          <Link href="https://www.zhihu.com/question/20097263"> 怎么练好英语口语？</Link>
+          <Link href="https://www.zhihu.com/question/20097263">
+            {' '}
+            怎么练好英语口语？
+          </Link>
           的高分回答。
         </div>
         <div className={`text--center row ${styles.moduleContainer}`}>
