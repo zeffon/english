@@ -11,7 +11,7 @@
     "format": "prettier --write --cache .",
     "lint": "eslint --cache .",
     "typecheck": "tsc -p scripts --noEmit",
-    "dev": "pnpm -r --parallel --filter=./packages/* run dev",
+    "start": "pnpm -r --parallel --filter=./packages/* run start",
     "build": "pnpm -r --filter=./packages/* run build",
     "release": "tsx scripts/release.ts",
     "ci-publish": "tsx scripts/publishCI.ts"
