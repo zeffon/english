@@ -662,3 +662,7 @@ export const symbolDemoItems = [
   { value: 'kk', label: 'KK音标示范', aid: '414096645', page: 45 },
   { value: 'ipa', label: '国际音标示范', aid: '414096645', page: 46 },
 ]
+
+export const symbolPhonicsItems = [
+  { value: 'phonics-1', label: '自然拼读', aid: '234047001', page: 1 },
+]

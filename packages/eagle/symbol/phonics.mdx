@@ -1,0 +1,22 @@
+---
+sidebar_position: 4
+sidebar_label: 自然拼读
+title: ''
+slug: /phonics
+---
+
+import BilibiliEmbedRenderer from 'react-bilibili-embed-renderer'
+import { symbolPhonicsItems } from '@site/data/symbol'
+
+export const PhonicsContainer = () => {
+  return (
+    <div className="flex-row-center">
+      <BilibiliEmbedRenderer
+        aid={symbolPhonicsItems[0].aid}
+        page={symbolPhonicsItems[0].page}
+      />
+    </div>
+  )
+}
+
+<PhonicsContainer></PhonicsContainer>
